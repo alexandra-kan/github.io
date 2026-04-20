@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandra Kan · Head of Growth · Consumer Marketplace</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F8F7F5;--chalk:#F8F7F5;--noir:#0D0D0D;--graphite:#2A2A2A;
+  --slate:#5A5A5A;--fog:#E8E5E0;--rule:#E0DDD8;--burgundy:#7A1F2E;
+  --eco:#1A3D28;--eco-lt:#7dc99a;
+  --cxg:#003c4c;--cxg-or:#bb6125;--cxg-tl:#9dd3c9;
+  --cxg-rd:#c14456;--cxg-sg:#56a686;--cxg-sd:#d9aa7f;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--noir);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes revealRight{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes lineExpand{from{width:0;opacity:0}to{width:100%;opacity:1}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@keyframes drift{0%{transform:translateY(0) rotate(-2deg)}100%{transform:translateY(-18px) rotate(-2deg)}}
+@keyframes glitch{0%,95%,100%{transform:none;opacity:1}96%{transform:translateX(3px);opacity:.9}97%{transform:translateX(-2px);opacity:.85}98%{transform:none;opacity:1}99%{transform:translateX(1px);opacity:.9}}
+
+.a1{animation:fadeUp .8s ease .1s both}
+.a2{animation:fadeUp .8s ease .25s both}
+.a3{animation:fadeUp .8s ease .4s both}
+.a4{animation:fadeUp .8s ease .55s both}
+.a5{animation:fadeUp .8s ease .7s both}
+/* Ensure hero content always visible regardless of font loading */
+.hero-firstname,.hero-lastname,.hero-pre,.hero-strip,.hero-bottom{opacity:1 !important}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4%;display:flex;align-items:center;justify-content:space-between;background:rgba(13,13,13,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-name{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:rgba(255,255,255,.85);text-decoration:none;letter-spacing:.02em}
+.nav-name b{color:var(--burgundy)}
+.nav-links{display:flex;gap:2.2rem}
+.nav-links a{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:rgba(255,255,255,.85)}
+
+/* HERO , DARK */
+/* HERO */
+.hero{
+  min-height:100vh;background:var(--noir);
+  display:grid;grid-template-rows:1fr auto;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;z-index:0;
+}
+.hero-main{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:9rem 4% 2rem;position:relative;z-index:1;
+}
+.hero-inner{max-width:900px;margin:0 auto;width:100%}
+.hero-name-wrap{margin-bottom:2rem}
+.hero-pre{
+  font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--burgundy);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:.8rem;opacity:.9;
+}
+.hero-pre::before{content:'';display:block;width:2rem;height:1px;background:var(--burgundy)}
+.hero-firstname{
+  font-family:'Impact','Arial Black',sans-serif;
+  font-size:clamp(4.5rem,12vw,11rem);
+  font-weight:900;color:rgba(255,255,255,.95);
+  line-height:.88;letter-spacing:.04em;text-transform:uppercase;
+  display:block;
+}
+.hero-firstname .bA{color:var(--burgundy)}
+.hero-lastname{
+  font-family:'Playfair Display','Georgia',serif;
+  font-style:italic;font-weight:700;
+  font-size:clamp(3.5rem,9vw,8.5rem);
+  color:rgba(255,255,255,.1);
+  line-height:.88;letter-spacing:-.02em;
+  display:block;margin-top:.1rem;text-align:right;
+}
+.hero-strip{
+  border-top:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  padding:.9rem 0;display:flex;align-items:center;gap:2rem;
+  flex-wrap:wrap;
+}
+.hero-strip-txt{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(.85rem,1.5vw,1.2rem);color:rgba(255,255,255,.45);
+  white-space:nowrap;
+}
+.hero-strip-dot{width:4px;height:4px;border-radius:50%;background:var(--burgundy);flex-shrink:0}
+/* Bottom proof bar */
+.hero-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:1.8rem 4%;position:relative;z-index:1;
+  background:rgba(0,0,0,.25);
+}
+.hero-bottom-inner{
+  max-width:900px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;
+  align-items:stretch;
+}
+.proof-item{
+  padding:0 2rem;border-right:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.proof-item:first-child{padding-left:0}
+.proof-val{
+  font-family:'Playfair Display','Georgia',serif;
+  font-size:1.7rem;font-weight:700;color:white;line-height:1;
+}
+.proof-label{
+  font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-top:.28rem;line-height:1.45;
+}
+.hero-actions{
+  padding-left:2rem;display:flex;flex-direction:column;
+  justify-content:center;gap:.55rem;
+}
+.hlink{
+  font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(255,255,255,.38);text-decoration:none;
+  transition:color .2s;white-space:nowrap;
+}
+.hlink:hover{color:var(--burgundy)}
+.hlink.primary{color:rgba(255,255,255,.75)}
+.hlink.primary:hover{color:white}
+.scroll-cue{
+  position:absolute;bottom:1.6rem;right:4%;
+  font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.18);animation:pulse 3s ease infinite;
+}
+/* Always visible */
+.hero-firstname,.hero-lastname,.hero-pre,.hero-strip,.hero-bottom{opacity:1!important}
+
+/* WORK DIVIDER */
+.work-div{max-width:900px;margin:0 auto;padding:3.2rem 2rem 1.2rem;display:flex;align-items:center;gap:1.5rem}
+.wd-text{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);white-space:nowrap}
+.wd-line{flex:1;height:1px;background:var(--rule)}
+.wd-count{font-family:'Playfair Display',serif;font-size:.82rem;color:var(--slate);font-style:italic;white-space:nowrap}
+
+/* SECTION */
+.section{padding:3rem 2rem 5.5rem;border-bottom:1px solid var(--rule)}
+.si{max-width:900px;margin:0 auto}
+.s-head{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:baseline;margin-bottom:3rem}
+.s-num{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:900;color:var(--rule);line-height:1;user-select:none}
+.s-ey{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+.s-ey::before{content:'';display:block;width:1.1rem;height:1px;background:var(--burgundy)}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.8vw,2.3rem);font-weight:900;line-height:1.1}
+h2 em{font-style:italic;color:var(--burgundy)}
+.two-col{display:grid;grid-template-columns:1fr 1.55fr;gap:4rem;align-items:start}
+.proj-body p{font-size:.9rem;color:#555;line-height:1.82;margin-bottom:1rem}
+.proj-body p:last-child{margin-bottom:0}
+.hook{background:var(--fog);border-left:3px solid var(--burgundy);padding:1rem 1.3rem;margin:1.3rem 0;border-radius:0 4px 4px 0}
+.hook p{font-size:.88rem;color:var(--graphite);line-height:1.8;margin:0;font-style:italic}
+.meta-row{margin-top:1.5rem;display:flex;flex-direction:column;gap:.95rem}
+.meta-item{border-top:1px solid var(--rule);padding-top:.8rem}
+.meta-l{font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:.28rem}
+.meta-v{font-size:.82rem;color:var(--graphite);line-height:1.6;letter-spacing:.02em;word-spacing:.1em}
+.tag{display:inline-block;padding:.1rem .5rem;border:1px solid var(--rule);border-radius:3px;font-size:.62rem;color:var(--slate);margin:.08rem .04rem;background:var(--fog)}
+.tag.live{background:#e8f4e8;border-color:#c6e4c6;color:#2a6b3c}
+.proj-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.3rem;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;color:var(--noir);text-decoration:none;border-bottom:1px solid var(--noir);padding-bottom:.1rem;transition:color .2s,border-color .2s}
+.proj-link:hover{color:var(--burgundy);border-color:var(--burgundy)}
+
+/* CAROUSEL */
+.carousel{border-radius:10px;overflow:hidden;box-shadow:0 16px 60px rgba(0,0,0,.12);border:1px solid var(--rule)}
+.c-bar{background:#ECEAE6;padding:.6rem 1rem;display:flex;align-items:center;gap:.4rem;border-bottom:1px solid var(--rule)}
+.cdot{width:9px;height:9px;border-radius:50%}
+.cdot:nth-child(1){background:#ff5f57}.cdot:nth-child(2){background:#ffbd2e}.cdot:nth-child(3){background:#28ca41}
+.curl{flex:1;max-width:280px;margin-left:.7rem;background:white;border:1px solid var(--rule);border-radius:20px;padding:.17rem .85rem;font-size:.65rem;color:var(--slate)}
+.c-screens{position:relative;overflow:hidden}
+.c-screen{position:absolute;inset:0;opacity:0;transform:translateX(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.c-screen.active{opacity:1;transform:translateX(0);pointer-events:auto}
+.c-screen.leaving{opacity:0;transform:translateX(-18px)}
+.c-foot{background:#ECEAE6;border-top:1px solid var(--rule);padding:.6rem 1.1rem;display:flex;align-items:center;justify-content:space-between}
+.pdots{display:flex;gap:.38rem}
+.pdot{width:7px;height:7px;border-radius:50%;background:var(--rule);cursor:pointer;transition:background .3s}
+.pdot.on{background:var(--burgundy)}
+.c-lbl{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.c-lbl b{color:var(--burgundy)}
+
+/* AUDACITY SCREEN INTERNALS */
+.c-screens.aud{height:360px;background:#1C1C1C}
+.as-pad{padding:1.4rem}
+.alogo{font-family:'Impact',sans-serif;font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;color:#f8f7f5;margin-bottom:.9rem}
+.alogo b{color:#7A1F2E}
+.sf{margin-bottom:.55rem}
+.sl{font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:.2rem}
+.si2{width:100%;padding:.33rem .6rem;border:1px solid rgba(255,255,255,.1);border-radius:3px;font-size:.74rem;color:rgba(255,255,255,.6);background:rgba(255,255,255,.05);font-family:'DM Sans',sans-serif}
+.stags{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.18rem}
+.stag{padding:.12rem .48rem;border:1px solid rgba(255,255,255,.1);border-radius:20px;font-size:.58rem;color:rgba(255,255,255,.36)}
+.stag.on{background:#7A1F2E;border-color:#7A1F2E;color:white}
+.sbtn{display:block;width:100%;background:#7A1F2E;color:white;border:none;border-radius:3px;padding:.48rem;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:.8rem}
+.ops-bar{background:#111;padding:.45rem .9rem;display:flex;align-items:center;justify-content:space-between;margin:-1.4rem -1.4rem .82rem}
+.ops-logo{font-family:'Impact',sans-serif;color:#f8f7f5;font-size:.8rem;letter-spacing:.05em}
+.ops-logo b{color:#7A1F2E}
+.otabs{display:flex;gap:.1rem;margin-bottom:.72rem}
+.otab{font-size:.56rem;padding:.23rem .56rem;border-radius:3px;color:rgba(255,255,255,.26);text-transform:uppercase;letter-spacing:.05em}
+.otab.on{background:#7A1F2E;color:white}
+.acard{border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.62rem .78rem;margin-bottom:.4rem;display:flex;align-items:center;justify-content:space-between}
+.ac-n{font-size:.73rem;color:rgba(255,255,255,.7)}
+.ac-s{font-size:.58rem;color:rgba(255,255,255,.28);margin-top:.1rem}
+.abg{font-size:.53rem;padding:.1rem .38rem;border-radius:3px;margin-left:.3rem}
+.vic{background:rgba(122,31,46,.3);color:#d4788a}
+.core{background:rgba(42,107,60,.3);color:#70c485}
+.acta{display:flex;gap:.25rem}
+.abtn{font-size:.55rem;padding:.22rem .5rem;border-radius:3px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);background:transparent}
+.abtn.p{background:#7A1F2E;color:white;border-color:#7A1F2E}
+/* review */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:.33rem;margin:.5rem 0}
+.sc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:.4rem .5rem;text-align:center}
+.sc.tot{background:#7A1F2E}
+.sc-n{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#f8f7f5;line-height:1}
+.sc-l{font-size:.5rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.34);margin-top:.1rem}
+.sc.tot .sc-l{color:rgba(255,255,255,.6)}
+.rnote{background:rgba(255,255,255,.04);border-radius:3px;padding:.48rem .68rem;font-size:.67rem;color:rgba(255,255,255,.46);line-height:1.55;border:1px solid rgba(255,255,255,.07);margin-top:.4rem}
+/* rich brand portal */
+.bbar-top{background:#111;padding:.44rem .88rem;display:flex;align-items:center;justify-content:space-between;margin:-1.4rem -1.4rem .8rem}
+.bbar-n{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.6);font-size:.76rem}
+.bkpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.38rem;margin-bottom:.65rem}
+.bkpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:.5rem .6rem}
+.bkpi-n{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#f8f7f5;line-height:1}
+.bkpi-l{font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:.1rem}
+.bkpi-d{font-size:.55rem;margin-top:.12rem}
+.bg-up{color:#4ade80}.bg-dn{color:#f87171}
+.b2col{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.bcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:.55rem .65rem}
+.bct{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.45rem}
+.bbar-r{display:flex;align-items:center;gap:.42rem;margin-bottom:.24rem}
+.bbd{font-size:.56rem;color:rgba(255,255,255,.38);width:68px;flex-shrink:0}
+.bbt{flex:1;height:5px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden}
+.bbf{height:100%;border-radius:20px;background:#7A1F2E}
+.bbv{font-size:.55rem;color:rgba(255,255,255,.3);width:22px;text-align:right}
+/* trend mini */
+.trend-row{display:flex;justify-content:space-between;align-items:flex-end;gap:.12rem;height:32px;margin:.3rem 0}
+.tb{border-radius:2px 2px 0 0;flex:1;min-width:6px}
+.loc-row{display:flex;align-items:center;justify-content:space-between;padding:.24rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.62rem}
+.loc-row:last-child{border-bottom:none}
+.loc-n{color:rgba(255,255,255,.6)}
+.loc-v{color:rgba(255,255,255,.85);font-weight:500}
+.loc-d{font-size:.5rem;color:#4ade80}
+
+/* ECO */
+#eco{background:var(--eco);border-bottom-color:rgba(255,255,255,.08)}
+#eco .s-num{color:rgba(255,255,255,.04)}
+#eco .s-ey{color:var(--eco-lt)}
+#eco .s-ey::before{background:var(--eco-lt)}
+#eco h2{color:white}
+#eco h2 em{color:var(--eco-lt)}
+.c-screens.eco{height:360px;background:#f4f2ee}
+/* eco topbar */
+.etop{background:var(--noir);padding:.5rem 1rem;display:flex;align-items:center;justify-content:space-between}
+.elogo{display:flex;align-items:center;gap:.45rem}
+.esq{width:11px;height:11px;background:#2a6b3c;border-radius:1px}
+.ebn{font-size:.78rem;font-weight:700;color:white}
+.enav{display:flex;gap:1.1rem;font-size:.6rem;color:rgba(255,255,255,.45)}
+.elogin{background:#2a6b3c;color:white;padding:.2rem .65rem;border-radius:20px;font-size:.58rem}
+.ebody{padding:1.1rem 1.4rem;background:white;height:calc(100% - 34px);overflow:hidden}
+.ehtxt{font-size:1rem;font-weight:700;color:#0a0a0a;text-align:center;margin:.4rem 0 .7rem}
+.etog{display:inline-flex;background:#e8e8e8;border-radius:4px;padding:2px;margin-bottom:.6rem}
+.etg{font-size:.6rem;padding:.2rem .6rem;border-radius:3px;color:#666}
+.etg.on{background:#2a6b3c;color:white;font-weight:500}
+.efilters{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:.38rem;margin-bottom:.75rem}
+.efi{background:#f8f8f8;border:1px solid #e8e8e8;border-radius:4px;padding:.3rem .58rem;font-size:.6rem;color:#888}
+.esb{background:#2a6b3c;color:white;border:none;border-radius:4px;padding:.3rem .65rem;font-size:.6rem;font-weight:500;cursor:pointer}
+.ecards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.45rem}
+.ecard{border:1px solid #e8e8e8;border-radius:4px;padding:.55rem .7rem;background:#fafafa}
+.ecn{font-size:.65rem;font-weight:600;color:#0a0a0a;margin-bottom:.18rem}
+.ecl{font-size:.55rem;color:#888;margin-bottom:.28rem}
+.ecert{display:inline-block;background:#e8f4e8;color:#2a6b3c;font-size:.5rem;padding:.06rem .32rem;border-radius:3px;margin:.04rem .03rem 0 0}
+/* eco dash */
+.edash{background:#f8f8f8;height:100%;padding:.75rem .9rem;overflow:hidden}
+.edkpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;margin-bottom:.65rem}
+.edkpi{background:white;border:1px solid #eee;border-radius:4px;padding:.48rem .6rem}
+.edkpi-n{font-size:1.05rem;font-weight:700;color:#0a0a0a}
+.edkpi-d{font-size:.48rem;color:#2a6b3c;letter-spacing:.06em;text-transform:uppercase}
+.edkpi-l{font-size:.5rem;color:#888;margin-top:.04rem}
+.edgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:.55rem}
+.edcard{background:white;border:1px solid #eee;border-radius:4px;padding:.55rem .65rem}
+.edtitle{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:.45rem}
+.erow{display:flex;align-items:center;justify-content:space-between;padding:.25rem 0;border-bottom:1px solid #f0f0f0;font-size:.6rem}
+.erow:last-child{border-bottom:none}
+/* eco results */
+.eres{display:grid;grid-template-columns:175px 1fr;height:calc(100% - 34px);background:white}
+.esb2{padding:.75rem;border-right:1px solid #eee;overflow:hidden}
+.esbt{font-size:.58rem;font-weight:600;color:#0a0a0a;margin-bottom:.45rem}
+.esg{margin-bottom:.65rem}
+.esgr{font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.28rem}
+.esgi{display:flex;align-items:center;gap:.28rem;margin-bottom:.16rem;font-size:.56rem;color:#555}
+.ecb{width:8px;height:8px;border:1px solid #ccc;border-radius:1px;flex-shrink:0}
+.ecb.on{background:#2a6b3c;border-color:#2a6b3c}
+.emain{padding:.75rem}
+.emh{display:flex;align-items:center;justify-content:space-between;margin-bottom:.55rem}
+.emhc{font-size:.62rem;color:#555;font-weight:500}
+.emgrid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem}
+.emcard{border:1px solid #e8e8e8;border-radius:4px;padding:.55rem .7rem}
+.emn{font-size:.66rem;font-weight:600;color:#0a0a0a;margin-bottom:.13rem}
+.emm{font-size:.54rem;color:#888;margin-bottom:.28rem}
+.emcerts{display:flex;flex-wrap:wrap;gap:.12rem}
+/* eco contracts */
+.econ{height:calc(100% - 34px);background:#f8f8f8;padding:.75rem .85rem}
+.econh{display:flex;align-items:center;justify-content:space-between;margin-bottom:.65rem}
+.econt{font-size:.72rem;font-weight:600;color:#0a0a0a}
+.econv{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#2a6b3c}
+.econc{background:white;border:1px solid #e8e8e8;border-radius:4px;padding:.65rem .8rem;margin-bottom:.45rem}
+.econct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.35rem}
+.econcn{font-size:.68rem;font-weight:600;color:#0a0a0a}
+.econcs{font-size:.52rem;padding:.1rem .38rem;border-radius:3px;background:#e8f4e8;color:#2a6b3c}
+.econcp{height:5px;background:#eee;border-radius:20px;overflow:hidden;margin:.35rem 0}
+.econcb{height:100%;background:#2a6b3c;border-radius:20px}
+.econcm{display:flex;justify-content:space-between;font-size:.54rem;color:#888}
+.epos{display:grid;grid-template-columns:repeat(4,1fr);gap:.28rem;margin-top:.5rem}
+.epo{background:white;border:1px solid #eee;border-radius:3px;padding:.3rem .45rem}
+.epo-id{color:#888;font-size:.56rem}
+.epo-v{font-size:.58rem;font-weight:600}
+
+/* ECO BOTTOM */
+.eco-bottom{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.eco-copy p{font-size:.88rem;color:rgba(255,255,255,.58);line-height:1.85;margin-bottom:.95rem}
+.eco-copy p.muted{color:rgba(255,255,255,.35)}
+.eco-copy p:last-child{margin-bottom:0}
+.eco-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.2rem;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--eco-lt);text-decoration:none;border-bottom:1px solid rgba(125,201,154,.4);padding-bottom:.1rem}
+.mit-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem;padding-bottom:.85rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.mit-inner{background:black;padding:.48rem .65rem;border-radius:3px;display:flex;align-items:center;gap:.55rem}
+.mit-g{display:grid;grid-template-columns:repeat(3,8px);grid-template-rows:repeat(3,8px);gap:3px}
+.mit-sq{width:8px;height:8px;background:white}
+.mit-sq.x{background:transparent}
+.mit-wm{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.75rem;color:white;line-height:1.12;letter-spacing:.02em}
+.mit-win{display:inline-block;background:var(--burgundy);color:white;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;padding:.18rem .55rem;border-radius:2px;margin-left:auto;flex-shrink:0}
+.eco-win-desc{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.7}
+.eco-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.4rem}
+.estn{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:white;line-height:1}
+.estl{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-top:.16rem}
+.eco-meta{border-top:1px solid rgba(255,255,255,.08);padding-top:1.1rem}
+.emi{margin-bottom:.85rem}
+.emla{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.28rem}
+.emva{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6}
+
+/* CXG */
+.cxg-layout{display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;align-items:start}
+.cxg-copy p{font-size:.92rem;color:#555;line-height:1.88;margin-bottom:1.1rem}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.7rem}
+.ba-card{border-radius:4px;padding:1rem 1.25rem}
+.ba-bef{background:var(--fog);border:1px solid var(--rule)}
+.ba-aft{background:var(--cxg);color:white}
+.ba-lbl{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7rem;color:var(--slate)}
+.ba-aft .ba-lbl{color:rgba(255,255,255,.35)}
+.ba-it{font-size:.73rem;padding:.25rem 0;border-bottom:1px solid rgba(0,0,0,.07);color:#555;display:flex;gap:.38rem;line-height:1.45}
+.ba-aft .ba-it{border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.65)}
+.ba-it::before{content:'–';color:#bbb;flex-shrink:0}
+.ba-aft .ba-it::before{content:'✓';color:#4ade80}
+.ba-it:last-child{border-bottom:none}
+.cxg-note{font-size:.76rem;color:var(--slate);line-height:1.7;margin-top:1.4rem;font-style:italic}
+/* BI dashboard */
+.bi{background:white;border:1px solid var(--rule);border-radius:8px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.bi-top{background:var(--cxg);padding:.65rem 1.05rem;display:flex;align-items:center;justify-content:space-between}
+.bi-tit{font-size:.7rem;color:rgba(255,255,255,.78);letter-spacing:.04em}
+.bi-fs{display:flex;gap:.32rem}
+.bi-f{font-size:.54rem;padding:.13rem .48rem;background:rgba(255,255,255,.08);border-radius:3px;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.12)}
+.bi-f.on{background:var(--cxg-or);border-color:var(--cxg-or);color:white}
+.bi-body{padding:.8rem .95rem}
+.bi-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.8rem}
+.bi-kpi{background:#f8f7f5;border:1px solid var(--rule);border-radius:4px;padding:.58rem .68rem}
+.bi-kn{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--noir);line-height:1}
+.bi-kl{font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.14rem}
+.bi-kd{font-size:.56rem;margin-top:.16rem;font-weight:500}
+.bup{color:#2a7a4a}.bdn{color:var(--cxg-rd)}.bnu{color:var(--cxg-or)}
+.bi-charts{display:grid;grid-template-columns:1.6fr 1fr;gap:.6rem;margin-bottom:.6rem}
+.bi-card{background:#f8f7f5;border:1px solid var(--rule);border-radius:4px;padding:.65rem .8rem}
+.bi-ct{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:.55rem}
+.rev-chart{display:flex;align-items:flex-end;gap:.2rem;height:84px;margin-bottom:.28rem}
+.rbg{display:flex;gap:.07rem;align-items:flex-end;flex:1}
+.rb{border-radius:2px 2px 0 0;flex:1;min-width:7px}
+.rb.a{background:var(--cxg)}.rb.b{background:var(--cxg-tl);opacity:.65}
+.rb.f{background:var(--cxg-or);opacity:.8}.rb.p{background:var(--cxg-sd);opacity:.65;border:1px dashed var(--cxg-or)}
+.rl{display:flex;gap:.2rem}
+.rlg{flex:1;text-align:center;font-size:.46rem;color:var(--slate)}
+.rleg{display:flex;gap:.7rem;margin-top:.38rem}
+.rli{display:flex;align-items:center;gap:.22rem;font-size:.48rem;color:var(--slate)}
+.rld{width:8px;height:8px;border-radius:1px;flex-shrink:0}
+.pipe{display:flex;flex-direction:column;gap:.32rem}
+.pr{display:flex;align-items:center;gap:.45rem}
+.ps{font-size:.56rem;color:var(--graphite);width:65px;flex-shrink:0}
+.pbw{flex:1;background:#eee;border-radius:20px;height:11px;overflow:hidden}
+.pb{height:100%;border-radius:20px;display:flex;align-items:center;padding-left:.35rem}
+.pv{font-size:.5rem;color:white;font-weight:500;white-space:nowrap}
+.pc{font-size:.5rem;color:var(--slate);width:30px;text-align:right}
+.var-t{width:100%;border-collapse:collapse;font-size:.56rem}
+.var-t th{text-align:left;padding:.26rem .48rem;border-bottom:1px solid var(--rule);color:var(--slate);letter-spacing:.06em;text-transform:uppercase;font-weight:400;font-size:.5rem}
+.var-t td{padding:.28rem .48rem;border-bottom:1px solid var(--rule);color:var(--graphite)}
+.var-t tr:last-child td{border-bottom:none}
+.vp{color:#2a7a4a;font-weight:500}.vn{color:var(--cxg-rd);font-weight:500}
+.cap-rows{display:flex;flex-direction:column;gap:.35rem}
+.cr{display:flex;align-items:center;gap:.45rem}
+.crla{font-size:.56rem;color:var(--graphite);width:52px;flex-shrink:0}
+.crtr{flex:1;height:9px;background:#eee;border-radius:20px;overflow:hidden}
+.crfi{height:100%;border-radius:20px}
+.crpct{font-size:.52rem;color:var(--slate);width:28px;text-align:right}
+
+/* G&E SECTION */
+#ge{background:var(--chalk)}
+.ge-layout{display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;align-items:start}
+.ge-copy p{font-size:.88rem;color:#555;line-height:1.82;margin-bottom:.95rem}
+.ge-dash{background:white;border:1px solid var(--rule);border-radius:8px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.ge-top{background:#1a1a2e;padding:.65rem 1.05rem;display:flex;align-items:center;justify-content:space-between}
+.ge-tit{font-size:.7rem;color:rgba(255,255,255,.78);letter-spacing:.04em}
+.ge-fs{display:flex;gap:.32rem}
+.ge-f{font-size:.54rem;padding:.13rem .48rem;background:rgba(255,255,255,.08);border-radius:3px;color:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.12)}
+.ge-f.on{background:#7A1F2E;border-color:#7A1F2E;color:white}
+.ge-body{padding:.8rem .95rem}
+.ge-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.8rem}
+.ge-kpi{background:#f8f7f5;border:1px solid var(--rule);border-radius:4px;padding:.58rem .68rem}
+.ge-kn{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--noir);line-height:1}
+.ge-kl{font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.14rem}
+.ge-kd{font-size:.56rem;margin-top:.16rem;font-weight:500}
+.ge-charts{display:grid;grid-template-columns:1.4fr 1fr;gap:.6rem;margin-bottom:.6rem}
+.ge-card{background:#f8f7f5;border:1px solid var(--rule);border-radius:4px;padding:.65rem .8rem}
+.ge-ct{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:.55rem}
+/* funnel */
+.funnel{display:flex;flex-direction:column;gap:.22rem;align-items:center}
+.frow{display:flex;align-items:center;gap:.6rem;width:100%}
+.fbar-wrap{flex:1;display:flex;justify-content:center}
+.fbar{border-radius:3px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.56rem;color:white;font-weight:500;transition:width .3s}
+.farrow{font-size:.6rem;color:var(--slate);width:16px;text-align:center;flex-shrink:0}
+.flabel{font-size:.58rem;color:var(--graphite);width:80px;flex-shrink:0}
+.fcount{font-size:.56rem;color:var(--slate);width:40px;text-align:right}
+/* tier grid */
+.tier-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem}
+.tier-card{border-radius:4px;padding:.55rem .65rem;text-align:center}
+.tier-n{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;line-height:1}
+.tier-l{font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.12rem}
+.tier-pct{font-size:.58rem;margin-top:.12rem;font-weight:500}
+/* market table */
+.mkt-t{width:100%;border-collapse:collapse;font-size:.56rem}
+.mkt-t th{text-align:left;padding:.26rem .45rem;border-bottom:1px solid var(--rule);color:var(--slate);letter-spacing:.06em;text-transform:uppercase;font-weight:400;font-size:.5rem}
+.mkt-t td{padding:.27rem .45rem;border-bottom:1px solid var(--rule);color:var(--graphite)}
+.mkt-t tr:last-child td{border-bottom:none}
+.mutil{display:inline-block;padding:.08rem .32rem;border-radius:3px;font-size:.5rem;font-weight:500}
+.mutil.hi{background:#fee2e2;color:#991b1b}
+.mutil.ok{background:#e8f4e8;color:#2a6b3c}
+.mutil.lo{background:#fef3cd;color:#856404}
+.bar-inline{display:flex;align-items:center;gap:.3rem}
+.bi-track{flex:1;height:5px;background:#eee;border-radius:20px;overflow:hidden}
+.bi-fill{height:100%;border-radius:20px;background:#7A1F2E}
+
+/* FOOTER */
+footer{background:#EDEBE6;border-top:1px solid var(--rule);padding:3.5rem 2rem}
+.fi{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.fn{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700}
+.fn em{font-style:italic;color:var(--burgundy)}
+.fl{display:flex;gap:2rem}
+.fl a{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);text-decoration:none;transition:color .2s}
+.fl a:hover{color:var(--burgundy)}
+.fc{font-size:.58rem;color:var(--slate);margin-top:.4rem;text-align:right}
+
+/* ── V2 REDESIGN ── */
+
+/* Remove tech dot-grid */
+.hero::before{display:none}
+
+/* Nav , unified Playfair */
+.nav-name{font-family:'Playfair Display',serif!important;font-size:.9rem;letter-spacing:0!important;text-transform:none!important;font-weight:700;color:rgba(255,255,255,.85)}
+.nav-name b{display:none}
+.nav-name em{font-style:italic;font-weight:400;color:rgba(255,255,255,.45)}
+
+/* Hide old Impact name spans */
+.hero-firstname,.hero-lastname{display:none!important}
+
+/* New hero name , Playfair only */
+.hero-name{font-family:'Playfair Display',serif;display:flex;flex-direction:column;margin-bottom:0}
+.hero-n1{font-weight:900;font-size:clamp(4rem,10vw,9rem);color:rgba(255,255,255,.95);line-height:.88;letter-spacing:-.02em;display:block}
+.hero-n2{font-weight:400;font-style:italic;font-size:clamp(3.2rem,8vw,7.5rem);color:rgba(255,255,255,.18);text-align:left;line-height:.88;letter-spacing:-.01em;display:block;margin-top:.06em}
+
+/* Hero statement , THE tagline, front and centre */
+.hero-statement{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.85rem);color:rgba(255,255,255,.6);line-height:1.55;max-width:700px;margin:2rem 0 1.8rem}
+
+/* Hero CTA , prominent, in hero body */
+.hero-cta{display:flex;align-items:center;gap:1.5rem;margin-bottom:2.2rem}
+.hcta-primary{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:white;text-decoration:none;background:var(--burgundy);padding:.72rem 1.5rem;border-radius:2px;transition:background .2s;flex-shrink:0}
+.hcta-primary:hover{background:#8f2435}
+.hcta-sec{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.hcta-sec:hover{color:rgba(255,255,255,.75)}
+
+/* Always visible */
+.hero-pre,.hero-name,.hero-statement,.hero-strip,.hero-cta,.hero-bottom{opacity:1!important}
+
+/* Proof bar , toned down, no big KPI numbers */
+.proof-val{display:none}
+.proof-label{font-size:.62rem;letter-spacing:.04em;color:rgba(255,255,255,.38);line-height:1.5}
+.hero-bottom-inner{grid-template-columns:1fr 1fr 1fr 1fr}
+.hero-actions{display:none}
+
+/* ── VARIANT 2 , Light ── */
+.hero[data-variant="2"]{background:var(--chalk)}
+.hero[data-variant="2"] .hero-n1{color:var(--noir)}
+.hero[data-variant="2"] .hero-n2{color:rgba(13,13,13,.40)}
+.hero[data-variant="2"] .hero-pre{color:var(--burgundy)}
+.hero[data-variant="2"] .hero-statement{color:var(--slate)}
+.hero[data-variant="2"] .hero-strip-txt{color:var(--slate)}
+.hero[data-variant="2"] .hero-strip-dot{background:var(--burgundy)}
+.hero[data-variant="2"] .hero-strip{border-color:var(--rule)}
+.hero[data-variant="2"] .hcta-sec{color:var(--graphite)}
+.hero[data-variant="2"] .hcta-sec:hover{color:var(--noir)}
+.hero[data-variant="2"] .hero-bottom{background:var(--fog);border-top:1px solid var(--rule)}
+.hero[data-variant="2"] .proof-label{color:var(--slate)}
+.hero[data-variant="2"] .proof-item{border-right-color:var(--rule)}
+.hero[data-variant="2"] .scroll-cue{color:var(--slate)}
+
+/* ── VARIANT 3 , Statement First, Light ── */
+.hero[data-variant="3"]{background:var(--chalk)}
+.hero[data-variant="3"] .hero-inner{display:flex;flex-direction:column}
+.hero[data-variant="3"] .hero-pre{order:0;color:var(--burgundy)}
+.hero[data-variant="3"] .hero-statement{order:1;font-size:clamp(2rem,3.8vw,3.4rem);color:var(--noir);line-height:1.22;max-width:none;margin-top:2rem;margin-bottom:2.5rem;font-style:italic}
+.hero[data-variant="3"] .hero-strip{order:2;border-color:var(--rule)}
+.hero[data-variant="3"] .hero-strip-txt{color:var(--slate)}
+.hero[data-variant="3"] .hero-strip-dot{background:var(--burgundy)}
+.hero[data-variant="3"] .hero-cta{order:3}
+.hero[data-variant="3"] .hcta-sec{color:var(--graphite)}
+.hero[data-variant="3"] .hcta-sec:hover{color:var(--noir)}
+.hero[data-variant="3"] .hero-name-wrap{order:4;margin-top:1.5rem;border-top:1px solid var(--rule);padding-top:1.5rem}
+.hero[data-variant="3"] .hero-name{flex-direction:row;align-items:baseline;gap:.45em}
+.hero[data-variant="3"] .hero-n1{font-size:clamp(.9rem,1.6vw,1.3rem);color:var(--slate);font-weight:400;font-style:italic;line-height:1}
+.hero[data-variant="3"] .hero-n2{font-size:clamp(.9rem,1.6vw,1.3rem);color:rgba(13,13,13,.22);text-align:left;margin-top:0;line-height:1}
+.hero[data-variant="3"] .hero-bottom{background:var(--fog);border-top:1px solid var(--rule)}
+.hero[data-variant="3"] .proof-label{color:var(--slate)}
+.hero[data-variant="3"] .proof-item{border-right-color:var(--rule)}
+.hero[data-variant="3"] .scroll-cue{color:var(--slate)}
+
+/* ── SECTION HEADERS ── */
+.s-num{display:none}
+.s-head{grid-template-columns:1fr!important;gap:0;margin-bottom:3.5rem}
+.s-ey{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:.7rem;display:flex;align-items:center;gap:.55rem}
+.s-ey::before{display:none!important}
+.s-idx{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:.78rem;letter-spacing:0;text-transform:none;line-height:1;color:var(--burgundy);opacity:.8}
+h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
+.section{padding:5.5rem 2rem 6.5rem}
+
+/* Eco section s-ey , override for dark bg */
+#eco .s-head{margin-bottom:3.5rem}
+#eco .s-ey{display:flex;align-items:center;gap:.55rem}
+
+/* ── CXG BEFORE/AFTER , prose transformation ── */
+.ba-grid{display:none!important}
+.ba-statement{margin-top:2rem;border-top:1px solid var(--rule);padding-top:2rem}
+.ba-before{font-size:.9rem;color:#aaa;line-height:1.82;margin-bottom:1.1rem;font-style:italic}
+.ba-divider-arrow{font-size:.85rem;color:var(--burgundy);margin-bottom:1.1rem;letter-spacing:.05em}
+.ba-after{font-size:.9rem;color:var(--graphite);line-height:1.82;font-style:italic}
+
+/* ── G&E intro ── */
+.ge-intro{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.35rem);color:var(--graphite);line-height:1.65;max-width:820px;margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:1px solid var(--rule)}
+
+/* ── ECO SECTION , LIGHT BACKGROUND OVERRIDES ── */
+#eco{background:rgb(248,247,245)!important;border-bottom-color:var(--rule)!important}
+#eco .s-num{color:var(--rule)!important}
+#eco .s-ey{color:var(--slate)!important}
+#eco .eco-bottom{border-top-color:var(--rule)}
+#eco .eco-copy p{color:var(--graphite)}
+#eco .eco-copy p.muted{color:var(--slate)}
+#eco .eco-link{color:var(--eco);border-bottom-color:rgba(26,61,40,.3)}
+
+/* Eco bottom right , editorial, no badges */
+.eco-right{display:flex;flex-direction:column}
+.eco-award{border:1px solid var(--rule);border-left:3px solid var(--eco);padding:1.15rem 1.25rem 1.2rem 1.25rem;margin-bottom:2rem;background:white;border-radius:0 6px 6px 0;box-shadow:0 8px 24px rgba(0,0,0,.04)}
+.eco-award-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:.85rem}
+.eco-award-copy{flex:1;min-width:0}
+.eco-award-label{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:.45rem}
+.eco-award-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;color:var(--graphite);line-height:1.2;margin-bottom:.22rem}
+.eco-award-year{font-size:.6rem;color:var(--eco);letter-spacing:.1em;text-transform:uppercase;margin-bottom:0}
+.eco-award-desc{font-size:.85rem;color:var(--slate);line-height:1.78}
+.eco-facts{display:flex;gap:3rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
+.eco-fact{display:flex;flex-direction:column}
+.eco-fact-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--eco);line-height:1}
+.eco-fact-l{font-size:.6rem;color:var(--slate);margin-top:.35rem;line-height:1.4;letter-spacing:.03em}
+.eco-mi{margin-bottom:.9rem}
+.eco-ml{font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:.25rem}
+.eco-mv{font-size:.82rem;color:var(--graphite);line-height:1.6}
+
+/* ── GLOBAL ALIGNMENT , senior / executive register ── */
+.fn{font-family:'Playfair Display',serif!important;font-size:1.05rem;font-weight:700;text-transform:none!important;letter-spacing:0!important}
+.fn em{font-style:italic;color:var(--burgundy);font-weight:400}
+.wd-text{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--slate)}
+.wd-count{font-family:'Playfair Display',serif;font-style:italic;font-size:.82rem;color:var(--slate)}
+.hook{background:white;border-left:2px solid var(--rule);padding:1.1rem 1.4rem;margin:1.4rem 0;border-radius:0}
+.hook p{font-size:.88rem;color:var(--graphite);line-height:1.82;margin:0;font-style:italic}
+.meta-l{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:.3rem}
+.meta-v{font-size:.82rem;color:var(--graphite);line-height:1.65;letter-spacing:.02em;word-spacing:.1em}
+.cxg-note{font-size:.72rem;color:var(--slate);line-height:1.7;margin-top:1.5rem;font-style:italic;border-top:1px solid var(--rule);padding-top:1.2rem}
+.proj-body p{font-size:.9rem;color:#555;line-height:1.88;margin-bottom:1.1rem}
+
+/* ── CXG BEFORE/AFTER , pure editorial, no cards ── */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:2.5rem;border-top:2px solid var(--rule)}
+
+/* ── G&E , cream, KPI strip signals importance ── */
+#ge{background:var(--chalk);border-bottom:none}
+
+/* G&E KPI strip */
+.ge-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);margin:0 0 4rem;border-top:2px solid var(--burgundy);border-bottom:1px solid var(--rule);padding:2.2rem 0}
+.ge-kpi{padding:0 2.5rem;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.ge-kpi:first-child{padding:0 2.5rem}
+.ge-kpi:last-child{border-right:1px solid var(--rule)}
+.ge-kpi-n{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;color:var(--burgundy);line-height:1;margin-bottom:.25rem;text-align:center}
+.ge-kpi-lbl{font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:.28rem;text-align:center}
+.ge-kpi-delta{font-size:.72rem;color:var(--eco);line-height:1.35;font-weight:500;text-align:center}
+
+/* ── Eco MIT emblem , SVG logo ── */
+.eco-emblem{display:flex;align-items:center;justify-content:center;flex:0 0 auto;width:118px;min-width:118px;max-width:118px;padding:.55rem .7rem;border:1px solid var(--rule);border-radius:4px;background:var(--bg)}
+.eco-mit-logo{display:block;max-width:100%;width:100%;height:auto;max-height:52px;object-fit:contain;flex-shrink:0}
+.eco-emblem-txt{font-size:.62rem;color:var(--slate);line-height:1.35}
+
+
+
+@media(max-width:768px){
+  /* Layout grids */
+  .hero-grid,.eco-bottom,.two-col,.cxg-layout,.ge-layout,.ba-grid,.hero-stats{grid-template-columns:1fr}
+  [style*="grid-template-columns:1.2fr"],[style*="grid-template-columns:1fr 3fr"]{grid-template-columns:1fr!important}
+  .bi-kpis,.ge-kpis,.bkpis{grid-template-columns:1fr 1fr}
+  .ge-kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .ge-kpi:nth-child(odd){padding:0 2.5rem}
+  .bi-charts,.ge-charts,.b2col,.edgrid{grid-template-columns:1fr}
+  .eco-stats,.tier-grid{grid-template-columns:1fr 1fr}
+  .sg{grid-template-columns:repeat(3,1fr)}
+  .emgrid,.ecards{grid-template-columns:1fr 1fr}
+  .epos{grid-template-columns:1fr 1fr}
+  nav{padding:.8rem 4%}.nav-links{display:none}
+  footer .fi{flex-direction:column;gap:1.2rem;align-items:flex-start}
+  .fc{text-align:left}
+
+  /* Hero bottom proof bar */
+  .hero-bottom-inner{grid-template-columns:1fr 1fr;gap:.3rem;align-items:start}
+  .proof-item{padding:.6rem .3rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .proof-item:nth-child(odd){padding-left:0}
+  .hero-actions{padding-left:0;padding-top:.8rem;grid-column:1/-1;flex-direction:row;gap:1.5rem}
+  .hero-strip{gap:.5rem}
+  .hero-strip-txt{white-space:normal;font-size:.95rem}
+  
+  /* Tables on mobile */
+  .var-t{font-size:.48rem}
+  .var-t th{padding:.18rem .3rem;font-size:.42rem}
+  .var-t td{padding:.16rem .3rem}
+  
+  .hero-firstname{font-size:clamp(3.5rem,16vw,5rem)}
+  .hero-lastname{font-size:clamp(3rem,13vw,4.5rem)}
+
+  /* Carousels on mobile: switch to show/hide instead of absolute positioning */
+  .c-screens{height:auto !important}
+  /* All screens hidden by default on mobile */
+  .carousel .c-screen{
+    position:relative !important;
+    top:auto !important;left:auto !important;right:auto !important;bottom:auto !important;
+    transform:none !important;
+    opacity:0;
+    height:0;overflow:hidden;
+    pointer-events:none;
+    transition:none !important;
+  }
+  /* Only active screen visible */
+  .carousel .c-screen.active{
+    opacity:1 !important;
+    height:auto !important;
+    overflow:visible;
+    pointer-events:auto;
+    display:block;
+  }
+  .carousel .c-screen.leaving{
+    opacity:0;height:0;overflow:hidden;pointer-events:none;
+  }
+
+  /* Audacity screen padding */
+  .as-pad{padding:1rem}
+
+  /* EcoConnect: left nav stacks on top */
+  .c-screen[id^="es-"] > div[style*="grid-template-columns:160px"]{
+    display:flex !important;flex-direction:column !important;
+  }
+  #es-0 > div:last-child > div:first-child,
+  #es-1 > div:last-child > div:first-child,
+  #es-2 > div:last-child > div:first-child,
+  #es-3 > div:last-child > div:first-child{
+    width:100% !important;border-right:none !important;
+    border-bottom:1px solid rgba(0,0,0,.08);
+    padding:.5rem .8rem !important;
+    display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;
+  }
+
+  /* Eco results sidebar */
+  .eres{display:flex !important;flex-direction:column !important}
+  .esb2{border-right:none !important;border-bottom:1px solid #eee;
+    display:flex !important;flex-wrap:wrap;gap:.4rem;padding:.55rem .75rem}
+  .esg{margin-bottom:0 !important}
+
+  /* Eco opportunities grid header , hide cert col */
+  .curl{max-width:150px !important;font-size:.58rem !important}
+
+  /* G&E screens */
+  #gs-0 > div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr !important}
+  #gs-0 > div[style*="grid-template-columns:1.3fr"]{display:flex !important;flex-direction:column !important;gap:.55rem}
+  #gs-1 > div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr !important}
+  #gs-1 > div[style*="grid-template-columns:1.3fr"]{display:flex !important;flex-direction:column !important;gap:.55rem}
+
+  .rev-chart{height:60px !important}
+  .funnel .frow .flabel{width:60px}
+  .eco-award-top{flex-direction:column;gap:.75rem}
+  .eco-emblem{width:100%;min-width:0;max-width:180px;justify-content:flex-start}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#">Alexandra <em>Kan</em></a>
+  <div class="nav-links">
+    <a href="#ge">Growth Engine</a>
+    <a href="#aud">Audacity</a>
+    <a href="#cxg">Business Transformation</a>
+    <a href="#eco">EcoConnect</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" data-variant="2">
+  <div class="hero-main">
+    <div class="hero-inner">
+      <div class="hero-pre a1">Head of Growth · Paris · 2026</div>
+      <div class="hero-name-wrap a2">
+        <h1 class="hero-name">
+          <span class="hero-n1">Alexandra</span>
+          <span class="hero-n2">Kan</span>
+        </h1>
+      </div>
+      <p class="hero-statement a3">The growth problem is usually a product problem in disguise.</p>
+      <div class="hero-strip a4">
+        <span class="hero-strip-txt">Growth</span>
+        <span class="hero-strip-dot"></span>
+        <span class="hero-strip-txt">Product</span>
+        <span class="hero-strip-dot"></span>
+        <span class="hero-strip-txt">CX</span>
+        <span class="hero-strip-dot"></span>
+        <span class="hero-strip-txt">Global Markets</span>
+      </div>
+      <div class="hero-cta a5">
+        <a class="hcta-primary" href="https://www.linkedin.com/in/kan-alexandra/" target="_blank">Connect on LinkedIn ↗</a>
+        <a class="hcta-sec" href="mailto:kan.alexandra@gmail.com">Get in touch</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-bottom-inner">
+      <div class="proof-item">
+        <div class="proof-label">27% → 46% lead-to-profile<br>consumer conversion</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-label">55K consumers added<br>vs 40K over prior 17 years</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-label">16 live endpoints · built solo<br>deployed in 2 weeks</div>
+      </div>
+      <div class="proof-item" style="border-right:none">
+        <div class="proof-label">MITdesignX Demo Day Winner<br>Dubai · 2025</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll ↓</div>
+</section>
+
+<!-- ABOUT -->
+<section style="padding:4rem 2rem 4.5rem;border-bottom:1px solid var(--rule)">
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1.8fr;gap:2rem;align-items:start">
+    <div>
+      <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>About</div>
+      <div style="font-size:.82rem;color:var(--slate);line-height:1.7">Paris · Available now</div>
+      <div style="margin-top:1.2rem;display:flex;flex-direction:column;gap:.5rem">
+        <a href="https://www.linkedin.com/in/kan-alexandra/" target="_blank" style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--noir);text-decoration:none;border-bottom:1px solid var(--noir);padding-bottom:.1rem;width:fit-content;transition:color .2s,border-color .2s">LinkedIn ↗</a>
+        <a href="mailto:kan.alexandra@gmail.com" style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--noir);text-decoration:none;border-bottom:1px solid var(--noir);padding-bottom:.1rem;width:fit-content;transition:color .2s,border-color .2s">Get in touch ↗</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:1.05rem;color:var(--graphite);line-height:1.85;margin-bottom:1.4rem">The most expensive growth mistakes aren't bad campaigns, they're product leaks being treated as acquisition problems. You can't lifecycle your way out of an 80-question form.</p>
+      <p style="font-size:.92rem;color:#555;line-height:1.88;margin-bottom:1.4rem">A decade building and running the consumer side of a CX intelligence platform across 90 countries. I laid the operational foundation, built the growth function from zero, and drove 5x registration growth in three years. When the product fix I'd been pushing for didn't arrive, I built the platform myself.</p>
+      <p style="font-size:.92rem;color:#555;line-height:1.88;margin-bottom:1.6rem">Looking for a mandate where I own the consumer journey end-to-end: growth and product together.</p>
+      <div style="padding-top:1.2rem;border-top:1px solid var(--rule);display:flex;gap:1.8rem;flex-wrap:wrap">
+        <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">ESSEC & Mannheim Business School EMBA</div>
+        <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">North America · Europe · MENA · APAC </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section style="padding:3rem 2rem;border-bottom:1px solid var(--rule);background:var(--chalk)">
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 3fr;gap:4rem;align-items:start">
+    <div>
+      <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>Reference</div>
+    </div>
+    <div>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--graphite);line-height:1.7;margin-bottom:1.1rem">"In the years working together, Alexandra built a department from the ground up, launched new tools, processes and so much more. Not about quick fixes, but about finding the root cause of anything coming her way, she is an avid learner who has always challenged the status quo and taken matters into her own hands."</p>
+      <div style="font-size:.72rem;color:var(--slate);letter-spacing:.04em">Marine Debatte K. · EVP Community Engagement, CXG · Line Manager 2021–2026</div>
+    </div>
+  </div>
+</section>
+
+<div class="work-div">
+  <span class="wd-text">Selected work</span>
+  <span class="wd-line"></span>
+  <span class="wd-count">Four pieces</span>
+</div>
+
+<!-- 01 GROWTH ENGINE -->
+<section class="section" id="ge" style="border-bottom:none">
+  <div class="si">
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">01 /</span> 2023–2025 · CXG · GROWTH ENGINE</div><h2>Global Growth - <em>95K network,<br>55K added in 3 years</em></h2></div></div>
+    <p class="ge-intro">This didn't start with a growth brief. It started with two years building the operational foundation: forecast infrastructure, platform re-architecture, onboarding diagnosis. By 2023 the infrastructure existed and the funnel was measurable. Then came the mandate to grow.</p>
+    <div class="ge-kpi-strip">
+      <div class="ge-kpi">
+        <div class="ge-kpi-n">46%</div>
+        <div class="ge-kpi-lbl">Lead-to-profile</div>
+        <div class="ge-kpi-delta">↑ from 27% · +19pp over 2 years</div>
+      </div>
+      <div class="ge-kpi">
+        <div class="ge-kpi-n">55K</div>
+        <div class="ge-kpi-lbl">Added in 3 years</div>
+        <div class="ge-kpi-delta">vs 40K built over prior 17 years</div>
+      </div>
+      <div class="ge-kpi">
+        <div class="ge-kpi-n">+100%</div>
+        <div class="ge-kpi-lbl">YoY growth</div>
+        <div class="ge-kpi-delta">2025 · best year on record</div>
+      </div>
+      <div class="ge-kpi">
+        <div class="ge-kpi-n">95K</div>
+        <div class="ge-kpi-lbl">Network today</div>
+        <div class="ge-kpi-delta">90 countries · 11 markets</div>
+      </div>
+    </div>
+    <div style="max-width:720px;margin-bottom:3.5rem;margin-left:auto;margin-right:auto">
+        <p class="proj-body" style="font-size:.92rem;color:#555;line-height:1.88;margin-bottom:1.1rem">There was no team, no playbook, no CRM, and no data. So I started building: paid, referral, community, affiliations, influencers - whatever had a chance of sticking. Volume first, learning second.</p>
+        <p class="proj-body" style="font-size:.92rem;color:#555;line-height:1.88;margin-bottom:1.1rem">By year two the data was in. I could see which channels converted, reallocate the budget and optimize ROI. The growth engine was becoming repeatable. But one thing didn’t move no matter how we adjusted the mix. The funnel data showed the conversion problem wasn’t an acquisition problem - it was the drop-off at onboarding. Every channel, same wall. An 80-question registration form was the primary leak. We were asking consumers for full commitment before any value was delivered. Before they had any reason to trust us. I built the case for progressive profiling and a conversational AI layer, mapped the drop-off to specific form steps, and handed the redesign to Product.</p>
+        <p class="proj-body" style="font-size:.92rem;color:#555;line-height:1.88;margin-bottom:1.1rem">By year three: 5 direct reports, a regional matrix of 8 across 11 markets, HubSpot standing up the full consumer lifecycle, a €300K budget reallocated quarterly toward highest-ROI channels, and Power BI dashboards giving leadership their first real-time view of acquisition, retention, and market performance. 2025 was the biggest year on record - 30K users added, with the onboarding still broken.</p>
+        <p class="proj-body" style="font-size:.92rem;color:#555;line-height:1.88;margin-bottom:1.1rem">The redesign never shipped. So I left and built it myself.</p>
+        <p class="proj-body" style="font-size:.92rem;color:#555;line-height:1.88;margin-bottom:0">Which is why for my next step, I want to own the product, not just the brief.</p>
+    </div>
+    <div style="margin-bottom:.75rem">
+      <div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem"><span style="display:block;width:1.1rem;height:1px;background:var(--rule)"></span>What the intelligence work looked like</div>
+    </div>
+    <div>
+        <div class="carousel">
+          <div class="c-bar" style="background:#0f1b24;border-bottom-color:rgba(255,255,255,.08)">
+            <div class="cdot"></div><div class="cdot"></div><div class="cdot"></div>
+            <div class="curl" id="g-url" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.4)">G&E Intelligence · Database Health</div>
+          </div>
+          <div class="c-screens" style="height:370px;background:#0f1b24">
+
+            <!-- GE Screen 1: Database Health & Utilization -->
+            <div class="c-screen active" id="gs-0" style="padding:1.1rem 1.3rem">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem">
+                <div style="font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase">Database Health · Q4 2025 · Worldwide</div>
+                <div style="display:flex;gap:.3rem">
+                  <span style="font-size:.54rem;padding:.13rem .48rem;background:rgba(255,255,255,.08);border-radius:3px;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.12)">All Regions</span>
+                  <span style="font-size:.54rem;padding:.13rem .48rem;background:#7A1F2E;border-radius:3px;color:white;border:1px solid #7A1F2E">Live</span>
+                </div>
+              </div>
+              <!-- KPIs row -->
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.85rem">
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">95K</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">Total database</div>
+                  <div style="font-size:.54rem;color:#4ade80;margin-top:.15rem">↑ +8% YoY</div>
+                </div>
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">68%</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">Categorized</div>
+                  <div style="font-size:.54rem;color:#facc15;margin-top:.15rem">Target: 80%</div>
+                </div>
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">26%</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">Utilization WW</div>
+                  <div style="font-size:.54rem;color:#f87171;margin-top:.15rem">↓ Target: 35%</div>
+                </div>
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">4.2%</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">Churn rate</div>
+                  <div style="font-size:.54rem;color:#4ade80;margin-top:.15rem">↓ from 6.1%</div>
+                </div>
+              </div>
+              <!-- Two charts side by side -->
+              <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:.65rem">
+                <!-- Utilization by region heatmap-style bars -->
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.65rem .8rem">
+                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.55rem">Utilization rate by market, over/under target (35%)</div>
+                  <div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.32rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:62px;flex-shrink:0">Japan</span><div style="flex:1;height:10px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:35%;background:rgba(255,255,255,.15);border-right:1px dashed rgba(255,255,255,.2)"></div><div style="height:100%;border-radius:20px;background:#ef4444;width:80%"></div></div><span style="font-size:.58rem;color:#ef4444;width:28px">80%</span></div>
+                  <div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.32rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:62px;flex-shrink:0">France</span><div style="flex:1;height:10px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:35%;background:rgba(255,255,255,.15);border-right:1px dashed rgba(255,255,255,.2)"></div><div style="height:100%;border-radius:20px;background:#f97316;width:72%"></div></div><span style="font-size:.58rem;color:#f97316;width:28px">72%</span></div>
+                  <div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.32rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:62px;flex-shrink:0">HK / SEA</span><div style="flex:1;height:10px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:35%;background:rgba(255,255,255,.15);border-right:1px dashed rgba(255,255,255,.2)"></div><div style="height:100%;border-radius:20px;background:#facc15;width:55%"></div></div><span style="font-size:.58rem;color:#facc15;width:28px">55%</span></div>
+                  <div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.32rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:62px;flex-shrink:0">EU-SW</span><div style="flex:1;height:10px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:35%;background:rgba(255,255,255,.15);border-right:1px dashed rgba(255,255,255,.2)"></div><div style="height:100%;border-radius:20px;background:#4ade80;width:42%"></div></div><span style="font-size:.58rem;color:#4ade80;width:28px">42%</span></div>
+                  <div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.32rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:62px;flex-shrink:0">Americas</span><div style="flex:1;height:10px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:35%;background:rgba(255,255,255,.15);border-right:1px dashed rgba(255,255,255,.2)"></div><div style="height:100%;border-radius:20px;background:#60a5fa;width:24%"></div></div><span style="font-size:.58rem;color:#60a5fa;width:28px">24%</span></div>
+                  <div style="display:flex;align-items:center;gap:.45rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:62px;flex-shrink:0">China</span><div style="flex:1;height:10px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:35%;background:rgba(255,255,255,.15);border-right:1px dashed rgba(255,255,255,.2)"></div><div style="height:100%;border-radius:20px;background:#818cf8;width:18%"></div></div><span style="font-size:.58rem;color:#818cf8;width:28px">18%</span></div>
+                  <div style="display:flex;gap:1rem;margin-top:.5rem"><div style="font-size:.48rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:.25rem"><div style="width:10px;height:3px;background:#ef4444;border-radius:2px"></div>Over-utilized</div><div style="font-size:.48rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:.25rem"><div style="width:10px;height:3px;background:#60a5fa;border-radius:2px"></div>Under-activated</div><div style="font-size:.48rem;color:rgba(255,255,255,.3)">│ dashed = 35% target</div></div>
+                </div>
+                <!-- DB composition donut-style + churn -->
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.65rem .8rem">
+                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.55rem">Database composition</div>
+                  <div style="display:flex;flex-direction:column;gap:.32rem;margin-bottom:.65rem">
+                    <div style="display:flex;align-items:center;gap:.4rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:72px;flex-shrink:0">Categorized</span><div style="flex:1;height:8px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:#9dd3c9;width:68%"></div></div><span style="font-size:.56rem;color:rgba(255,255,255,.4);width:28px">68%</span></div>
+                    <div style="display:flex;align-items:center;gap:.4rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:72px;flex-shrink:0">Incomplete</span><div style="flex:1;height:8px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:#d9aa7f;width:18%"></div></div><span style="font-size:.56rem;color:rgba(255,255,255,.4);width:28px">18%</span></div>
+                    <div style="display:flex;align-items:center;gap:.4rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:72px;flex-shrink:0">Pending verify</span><div style="flex:1;height:8px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:#facc15;width:10%"></div></div><span style="font-size:.56rem;color:rgba(255,255,255,.4);width:28px">10%</span></div>
+                    <div style="display:flex;align-items:center;gap:.4rem"><span style="font-size:.58rem;color:rgba(255,255,255,.5);width:72px;flex-shrink:0">Not checked</span><div style="flex:1;height:8px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:#f87171;width:4%"></div></div><span style="font-size:.56rem;color:rgba(255,255,255,.4);width:28px">4%</span></div>
+                  </div>
+                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.42rem">Churn trend (quarterly)</div>
+                  <div style="display:flex;align-items:flex-end;gap:.22rem;height:36px">
+                    <div style="flex:1;background:rgba(248,113,113,.6);border-radius:2px 2px 0 0;height:80%"></div>
+                    <div style="flex:1;background:rgba(248,113,113,.55);border-radius:2px 2px 0 0;height:90%"></div>
+                    <div style="flex:1;background:rgba(248,113,113,.5);border-radius:2px 2px 0 0;height:75%"></div>
+                    <div style="flex:1;background:rgba(248,113,113,.45);border-radius:2px 2px 0 0;height:68%"></div>
+                    <div style="flex:1;background:rgba(74,222,128,.6);border-radius:2px 2px 0 0;height:55%"></div>
+                    <div style="flex:1;background:rgba(74,222,128,.7);border-radius:2px 2px 0 0;height:42%"></div>
+                    <div style="flex:1;background:rgba(74,222,128,.8);border-radius:2px 2px 0 0;height:35%"></div>
+                    <div style="flex:1;background:#4ade80;border-radius:2px 2px 0 0;height:28%"></div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;font-size:.46rem;color:rgba(255,255,255,.25);margin-top:.2rem"><span>Q1'24</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1'25</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GE Screen 2: Channel Effectiveness & ROI -->
+            <div class="c-screen" id="gs-1" style="padding:1.1rem 1.3rem">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem">
+                <div style="font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase">Channel Effectiveness & Acquisition ROI · FY 2025</div>
+                <div style="display:flex;gap:.3rem">
+                  <span style="font-size:.54rem;padding:.13rem .48rem;background:#7A1F2E;border-radius:3px;color:white">Direct</span>
+                  <span style="font-size:.54rem;padding:.13rem .48rem;background:rgba(255,255,255,.08);border-radius:3px;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.12)">All channels</span>
+                </div>
+              </div>
+              <!-- KPIs -->
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.85rem">
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">46%</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">Conversion rate</div>
+                  <div style="font-size:.54rem;color:#4ade80;margin-top:.15rem">↑ from 27%</div>
+                </div>
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">$8.40</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">Avg cost / activation</div>
+                  <div style="font-size:.54rem;color:#4ade80;margin-top:.15rem">↓ from $14.20</div>
+                </div>
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">2,641</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">New activations Q4</div>
+                  <div style="font-size:.54rem;color:#4ade80;margin-top:.15rem">↑ +22% YoY</div>
+                </div>
+                <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:.55rem .65rem">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:white;line-height:1">97%</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.12rem">Profile completion</div>
+                  <div style="font-size:.54rem;color:#4ade80;margin-top:.15rem">post-redesign baseline</div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:.65rem">
+                <!-- Channel ROI table -->
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.65rem .8rem">
+                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.55rem">Channel performance , conversion & cost</div>
+                  <table style="width:100%;border-collapse:collapse;font-size:.56rem">
+                    <thead><tr style="border-bottom:1px solid rgba(255,255,255,.08)"><th style="text-align:left;padding:.22rem .35rem;color:rgba(255,255,255,.35);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Channel</th><th style="text-align:right;padding:.22rem .35rem;color:rgba(255,255,255,.35);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Applicants</th><th style="text-align:right;padding:.22rem .35rem;color:rgba(255,255,255,.35);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Conv.</th><th style="text-align:right;padding:.22rem .35rem;color:rgba(255,255,255,.35);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Cost/act.</th></tr></thead>
+                    <tbody>
+                      <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.28rem .35rem;color:rgba(255,255,255,.65)">Direct Recruit</td><td style="text-align:right;padding:.28rem .35rem;color:rgba(255,255,255,.5)">4,820</td><td style="text-align:right;padding:.28rem .35rem;color:#4ade80;font-weight:500">46%</td><td style="text-align:right;padding:.28rem .35rem;color:#4ade80;font-weight:500">$4.20</td></tr>
+                      <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.28rem .35rem;color:rgba(255,255,255,.65)">Referral</td><td style="text-align:right;padding:.28rem .35rem;color:rgba(255,255,255,.5)">2,140</td><td style="text-align:right;padding:.28rem .35rem;color:#4ade80;font-weight:500">38%</td><td style="text-align:right;padding:.28rem .35rem;color:#4ade80;font-weight:500">$6.80</td></tr>
+                      <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.28rem .35rem;color:rgba(255,255,255,.65)">Organic / Job posts</td><td style="text-align:right;padding:.28rem .35rem;color:rgba(255,255,255,.5)">3,280</td><td style="text-align:right;padding:.28rem .35rem;color:#facc15;font-weight:500">28%</td><td style="text-align:right;padding:.28rem .35rem;color:#facc15;font-weight:500">$9.40</td></tr>
+                      <tr style="border-bottom:1px solid rgba(255,255,255,.05)"><td style="padding:.28rem .35rem;color:rgba(255,255,255,.65)">Paid Social</td><td style="text-align:right;padding:.28rem .35rem;color:rgba(255,255,255,.5)">1,650</td><td style="text-align:right;padding:.28rem .35rem;color:#f87171;font-weight:500">18%</td><td style="text-align:right;padding:.28rem .35rem;color:#f87171;font-weight:500">$18.60</td></tr>
+                      <tr><td style="padding:.28rem .35rem;color:rgba(255,255,255,.65)">Partner Networks</td><td style="text-align:right;padding:.28rem .35rem;color:rgba(255,255,255,.5)">590</td><td style="text-align:right;padding:.28rem .35rem;color:#f87171;font-weight:500">12%</td><td style="text-align:right;padding:.28rem .35rem;color:#f87171;font-weight:500">$24.10</td></tr>
+                    </tbody>
+                  </table>
+                  <div style="margin-top:.55rem;padding-top:.45rem;border-top:1px solid rgba(255,255,255,.07);font-size:.5rem;color:rgba(255,255,255,.28)">Korea: 97% conversion · SEA: 18% → 36% · Dedicated resource = 2–3× uplift</div>
+                </div>
+                <!-- Conversion trend -->
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.65rem .8rem">
+                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.42rem">Conversion rate trend (%)</div>
+                  <div style="display:flex;align-items:flex-end;gap:.28rem;height:60px;margin-bottom:.22rem">
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:rgba(255,255,255,.3)">27</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(157,211,201,.4);height:37%"></div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:rgba(255,255,255,.3)">30</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(157,211,201,.5);height:43%"></div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:rgba(255,255,255,.3)">33</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(157,211,201,.6);height:50%"></div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:rgba(255,255,255,.3)">36</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(74,222,128,.5);height:57%"></div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:rgba(255,255,255,.3)">39</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(74,222,128,.6);height:65%"></div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:rgba(255,255,255,.3)">42</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(74,222,128,.75);height:76%"></div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:rgba(255,255,255,.3)">44</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(74,222,128,.85);height:86%"></div>
+                    </div>
+                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
+                      <div style="font-size:.44rem;color:#4ade80;font-weight:600">46</div>
+                      <div style="width:100%;border-radius:2px 2px 0 0;background:#4ade80;height:100%"></div>
+                    </div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;font-size:.46rem;color:rgba(255,255,255,.25)"><span>Q1'24</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1'25</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
+                  <div style="margin-top:.65rem;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.4rem">Top performing markets</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:.22rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.58rem"><span style="color:rgba(255,255,255,.55)">Korea</span><span style="color:#4ade80;font-weight:600">97%</span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:.22rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.58rem"><span style="color:rgba(255,255,255,.55)">SEA</span><span style="color:#4ade80;font-weight:600">36% <span style="font-size:.48rem;font-weight:400;color:rgba(255,255,255,.35)">↑ from 18%</span></span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:.22rem 0;font-size:.58rem"><span style="color:rgba(255,255,255,.55)">EU-FR</span><span style="color:#facc15;font-weight:600">41%</span></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="c-foot" style="background:#0f1b24;border-top-color:rgba(255,255,255,.08)">
+            <div class="pdots"><div class="pdot on" style="background:var(--burgundy)" onclick="goG(0)"></div><div class="pdot" onclick="goG(1)"></div></div>
+            <div class="c-lbl" id="g-lbl" style="color:rgba(255,255,255,.4)">Database <b style="color:var(--burgundy)">Health</b></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 AUDACITY -->
+<section class="section" id="aud">
+  <div class="si">
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">02 /</span> 2026 · Founder &amp; Builder</div><h2>Audacity - <em>luxury mystery<br>shopping, rethought</em></h2></div></div>
+    <div style="max-width:720px;margin:0 auto 3rem">
+      <div class="proj-body">
+        <p>The EVX framework that emerged from three years at CXG pointed to an obvious gap: the consumer experience in mystery shopping was broken. Long forms, opaque processes, no feedback loop, payment that arrived weeks late, the people the whole model depended on were being treated as a resource to extract from, not a community to build. If you want high-quality consumers, you have to earn their trust before you ask for anything. You earn it through the experience, not the promise.</p>
+        <p>Audacity is that platform. Built around the consumer journey first: clean onboarding, matched missions, validated reporting, fast payment. The UX is the trust mechanism: frictionless enough that the right people never have a reason to hesitate. The brand insight follows naturally when the consumer experience is right. That’s the thesis, and it’s the same one I’ve been arguing since the 80-question form.</p>
+        <p>I’d been making this case inside a large organisation for two years. When it didn’t move fast enough, I built the first working version myself in two weeks: 16 live endpoints, three interfaces, a deployed platform. The build taught me more about the product than any specification process would have.</p>
+        <div class="meta-row">
+          <div class="meta-item"><div class="meta-l">Stack</div><div class="meta-v">Node.js · n8n · Notion API · Brevo · PM2</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:.75rem">
+      <div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem"><span style="display:block;width:1.1rem;height:1px;background:var(--rule)"></span>What the platform looks like</div>
+    </div>
+    <div>
+              <div class="carousel">
+          <div class="c-bar"><div class="cdot"></div><div class="cdot"></div><div class="cdot"></div><div class="curl" id="a-url">Consumer Registration</div></div>
+          <div class="c-screens aud">
+            <!-- S1: Registration -->
+            <div class="c-screen active" id="as-0">
+              <div class="as-pad">
+                <div class="alogo">AUD<b>A</b>CITY <span style="color:rgba(255,255,255,.2);font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:300;text-transform:none;letter-spacing:0">, Consumer Registration</span></div>
+                <div style="display:flex;gap:.4rem;margin-bottom:.7rem">
+                  <div style="display:flex;align-items:center;gap:.3rem;font-size:.58rem;color:var(--burgundy)"><div style="width:18px;height:18px;border-radius:50%;background:var(--burgundy);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;flex-shrink:0">1</div>Profile</div>
+                  <div style="flex:1;height:1px;background:rgba(255,255,255,.1);align-self:center"></div>
+                  <div style="display:flex;align-items:center;gap:.3rem;font-size:.58rem;color:rgba(255,255,255,.3)"><div style="width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0">2</div>Experience</div>
+                  <div style="flex:1;height:1px;background:rgba(255,255,255,.1);align-self:center"></div>
+                  <div style="display:flex;align-items:center;gap:.3rem;font-size:.58rem;color:rgba(255,255,255,.3)"><div style="width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0">3</div>Payment</div>
+                </div>
+                <div class="sf"><span class="sl">Full name</span><input class="si2" value="Sophie Laurent" readonly></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem">
+                  <div class="sf"><span class="sl">Country</span><input class="si2" value="France" readonly></div>
+                  <div class="sf"><span class="sl">City</span><input class="si2" value="Paris" readonly></div>
+                </div>
+                <div class="sf"><span class="sl">Luxury categories (select all)</span><div class="stags"><span class="stag on">Haute Couture</span><span class="stag on">Fine Jewelry</span><span class="stag on">Watches</span><span class="stag">Hotels</span><span class="stag on">Leather Goods</span><span class="stag">Private Aviation</span><span class="stag">Yachting</span></div></div>
+                <div class="sf"><span class="sl">Annual luxury spend (approx.)</span><input class="si2" value="€50,000 – €100,000" readonly></div>
+                <button class="sbtn">Continue to Experience →</button>
+              </div>
+            </div>
+            <!-- S2: Ops Assign -->
+            <div class="c-screen" id="as-1">
+              <div class="as-pad">
+                <div class="ops-bar"><div class="ops-logo">AUD<b>A</b>CITY Ops</div><span style="font-size:.54rem;color:rgba(255,255,255,.2)">ops.html#assign</span></div>
+                <div class="otabs"><div class="otab">Create</div><div class="otab on">Assign</div><div class="otab">Review</div><div class="otab">Analyze</div><div class="otab">Pay</div></div>
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.55rem .7rem;margin-bottom:.6rem">
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:.2rem">Maison Delvaux , Paris 8e · Boutique Visit</div>
+                  <div style="display:flex;gap:1.2rem;font-size:.56rem;color:rgba(255,255,255,.3)"><span>Window: 14–21 Apr 2026</span><span>Compensation: €150</span><span>Focus: Arrival, Consultation, Farewell</span></div>
+                </div>
+                <div class="acard"><div><div class="ac-n">Sophie Laurent <span class="abg vic">VIC</span></div><div class="ac-s">LC-00014 · Fine Jewelry, Couture, Watches · Paris · 4 missions completed</div></div><div class="acta"><button class="abtn">View</button><button class="abtn p">Select</button></div></div>
+                <div class="acard"><div><div class="ac-n">Marc Thiébault <span class="abg core">Core</span></div><div class="ac-s">LC-00009 · Leather Goods, RTW · Lyon · 2 missions completed</div></div><div class="acta"><button class="abtn">View</button><button class="abtn">Select</button></div></div>
+                <div class="acard"><div><div class="ac-n">Elena Marchetti <span class="abg core">Core</span></div><div class="ac-s">LC-00011 · RTW, Accessories · Milano · 1 mission completed</div></div><div class="acta"><button class="abtn">View</button><button class="abtn">Select</button></div></div>
+              </div>
+            </div>
+            <!-- S3: Review -->
+            <div class="c-screen" id="as-2">
+              <div class="as-pad">
+                <div class="ops-bar"><div class="ops-logo">AUD<b>A</b>CITY Ops</div><span style="font-size:.54rem;color:rgba(255,255,255,.2)">ops.html#review</span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin:.2rem 0 .4rem"><div style="font-size:.7rem;color:rgba(255,255,255,.65)">Maison Delvaux , Paris 8e · SHOPPER-3A1F02</div><span style="font-size:.54rem;padding:.1rem .4rem;background:rgba(42,107,60,.3);color:#70c485;border-radius:3px">✓ Validated</span></div>
+                <div style="font-size:.56rem;color:rgba(255,255,255,.26);margin-bottom:.45rem">Visit: 14 Apr 2026, 14:32 · Validated: 16 Apr 2026 · Duration: 34 min</div>
+                <div class="sg"><div class="sc tot"><div class="sc-n">8.4</div><div class="sc-l">Overall</div></div><div class="sc"><div class="sc-n">9</div><div class="sc-l">Arrival</div></div><div class="sc"><div class="sc-n">8</div><div class="sc-l">Consult.</div></div><div class="sc"><div class="sc-n">10</div><div class="sc-l">Presentn.</div></div><div class="sc"><div class="sc-n">7.5</div><div class="sc-l">Environ.</div></div><div class="sc"><div class="sc-n">8</div><div class="sc-l">Farewell</div></div></div>
+                <div style="display:flex;gap:.3rem;margin:.3rem 0"><span style="font-size:.5rem;padding:.1rem .4rem;background:rgba(255,255,255,.06);border-radius:3px;color:rgba(255,255,255,.4)">↑ +0.4 vs campaign avg</span><span style="font-size:.5rem;padding:.1rem .4rem;background:rgba(255,255,255,.06);border-radius:3px;color:rgba(255,255,255,.4)">↑ +0.6 vs location avg</span></div>
+                <div class="rnote">"SA approached immediately upon entry. Product knowledge was exceptional , she anticipated questions before they were asked. The wrapping presentation was flawless. Farewell felt rushed and lacked the ceremonial quality expected at this tier."</div>
+              </div>
+            </div>
+            <!-- S4: Rich Brand Portal -->
+            <div class="c-screen" id="as-3">
+              <div class="as-pad">
+                <div class="bbar-top"><div class="bbar-n">Maison Delvaux , Brand Portal</div><div style="display:flex;gap:.3rem;font-size:.54rem"><span style="color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:.12rem .4rem;border-radius:3px">Q2 2026</span><span style="color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:.12rem .4rem;border-radius:3px">All locations</span></div></div>
+                <div class="bkpis">
+                  <div class="bkpi"><div class="bkpi-n">8.4</div><div class="bkpi-l">Avg score</div><div class="bkpi-d bg-up">↑ +0.3 vs Q1</div></div>
+                  <div class="bkpi"><div class="bkpi-n">12</div><div class="bkpi-l">Visits Q2</div><div class="bkpi-d bg-up">4 validated</div></div>
+                  <div class="bkpi"><div class="bkpi-n">94%</div><div class="bkpi-l">On schedule</div><div class="bkpi-d" style="color:rgba(255,255,255,.35)">SLA: 90%</div></div>
+                  <div class="bkpi"><div class="bkpi-n">4</div><div class="bkpi-l">Locations</div><div class="bkpi-d" style="color:rgba(255,255,255,.35)">1 pending</div></div>
+                </div>
+                <div class="b2col">
+                  <div class="bcard">
+                    <div class="bct">Score by dimension</div>
+                    <div class="bbar-r"><span class="bbd">Arrival</span><div class="bbt"><div class="bbf" style="width:90%"></div></div><span class="bbv">9.0</span></div>
+                    <div class="bbar-r"><span class="bbd">Consultation</span><div class="bbt"><div class="bbf" style="width:80%"></div></div><span class="bbv">8.0</span></div>
+                    <div class="bbar-r"><span class="bbd">Presentation</span><div class="bbt"><div class="bbf" style="width:100%"></div></div><span class="bbv">10</span></div>
+                    <div class="bbar-r"><span class="bbd">Environment</span><div class="bbt"><div class="bbf" style="width:75%"></div></div><span class="bbv">7.5</span></div>
+                    <div class="bbar-r"><span class="bbd">Farewell</span><div class="bbt"><div class="bbf" style="width:80%"></div></div><span class="bbv">8.0</span></div>
+                  </div>
+                  <div class="bcard">
+                    <div class="bct">Score trend (Q3'25–Q2'26)</div>
+                    <div class="trend-row">
+                      <div class="tb" style="height:45%;background:rgba(122,31,46,.5)"></div>
+                      <div class="tb" style="height:55%;background:rgba(122,31,46,.55)"></div>
+                      <div class="tb" style="height:62%;background:rgba(122,31,46,.65)"></div>
+                      <div class="tb" style="height:58%;background:rgba(122,31,46,.65)"></div>
+                      <div class="tb" style="height:70%;background:rgba(122,31,46,.75)"></div>
+                      <div class="tb" style="height:68%;background:rgba(122,31,46,.75)"></div>
+                      <div class="tb" style="height:78%;background:rgba(122,31,46,.85)"></div>
+                      <div class="tb" style="height:84%;background:#7A1F2E"></div>
+                    </div>
+                    <div style="font-size:.5rem;color:rgba(255,255,255,.25);margin-top:.2rem">7.4 → 7.6 → 7.8 → 7.7 → 7.9 → 8.0 → 8.1 → 8.4</div>
+                    <div class="bct" style="margin-top:.6rem">By location</div>
+                    <div class="loc-row"><span class="loc-n">Paris 8e</span><span class="loc-v">8.4</span><span class="loc-d">↑ best</span></div>
+                    <div class="loc-row"><span class="loc-n">Paris 1er</span><span class="loc-v">8.1</span><span class="loc-d">↑ +0.2</span></div>
+                    <div class="loc-row"><span class="loc-n">Lyon Part-Dieu</span><span class="loc-v">7.8</span><span class="loc-d">– stable</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-foot"><div class="pdots"><div class="pdot on" onclick="goA(0)"></div><div class="pdot" onclick="goA(1)"></div><div class="pdot" onclick="goA(2)"></div><div class="pdot" onclick="goA(3)"></div></div><div class="c-lbl" id="a-lbl">Consumer <b>Registration</b></div></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule)">
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap"><span class="tag live">● Live</span><span class="tag">Stages 1–5 validated</span><span class="tag">Stage 6 in test</span></div>
+          <a class="proj-link" href="https://alexandra-kan.github.io/audacity/" target="_blank" style="margin-top:0;white-space:nowrap">View platform site</a>
+        </div>
+
+    </div>      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 BUSINESS TRANSFORMATION -->
+<section class="section" id="cxg">
+  <div class="si">
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">03 /</span> 2020–2022 · CXG · BUSINESS TRANSFORMATION</div><h2>Business Transformation - <em>the operating model behind later growth</em></h2></div></div>
+    <div style="max-width:720px;margin:0 auto 3rem;font-size:.9rem;color:#555;line-height:1.88">
+
+        <p>Before I could scale growth, leadership first needed to know what was actually coming in the commercial pipeline. There was no CRM, no ERP, no resource-planning layer, and no real cash-flow projection. Commercial visibility lived across hundreds of isolated Excel files across 11 business units worldwide.</p>
+        <div class="hook"><p>I took those fragmented files and built the company’s first live Power BI financial forecast. For the first time, leadership could see the pipeline, expected volume, delivery demand, and where operations would break before it happened. They still use it today.</p></div>
+        <p>That visibility exposed the next issue: strategic markets were undersourced, but scaling growth without fixing user experience would only leak down the funnel later.</p>
+        <p>The platform was unstable and the consumer onboarding was too long, five years of user feedback said so clearly. I led the re-architecture and migration of the web portal and mobile app across 25 languages and 70K users, from brief to launch, and made the case for onboarding simplification that the data had been making for years.</p>
+        <p>The tension of shorter user flow was real and relevant: ask too much, and users never reach first value; ask too little, and you weaken KYC and open the door to bad actors. Solving that balance, just as post-COVID luxury demand outgrew our organic growth, became the foundation on which the later growth function was built.</p>
+    </div>
+    <div style="margin-bottom:.75rem">
+      <div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem"><span style="display:block;width:1.1rem;height:1px;background:var(--rule)"></span>What the forecast infrastructure looked like</div>
+    </div>
+    <div class="bi">
+
+        <div class="bi-top"><div class="bi-tit">Global Commercial Intelligence · Forecast View · FY 2026</div><div class="bi-fs"><span class="bi-f on">All</span><span class="bi-f">Europe</span><span class="bi-f">MENA</span><span class="bi-f">APAC</span></div></div>
+        <div class="bi-body">
+          <div class="bi-kpis"><div class="bi-kpi"><div class="bi-kn">$4.2M</div><div class="bi-kl">Revenue YTD</div><div class="bi-kd bup">▲ +10.5% vs budget</div></div><div class="bi-kpi"><div class="bi-kn">$18.6M</div><div class="bi-kl">12M Forecast</div><div class="bi-kd bnu">23 opportunities</div></div><div class="bi-kpi"><div class="bi-kn">$8.4M</div><div class="bi-kl">Active Pipeline</div><div class="bi-kd bup">▲ +31% vs Q4</div></div><div class="bi-kpi"><div class="bi-kn">94%</div><div class="bi-kl">Delivery Rate</div><div class="bi-kd bup">SLA: 90%</div></div></div>
+          <div class="bi-charts">
+            <div class="bi-card"><div class="bi-ct">Revenue , Actual vs Budget vs Forecast ($K)</div><div class="rev-chart"><div class="rbg"><div class="rb a" style="height:58px"></div><div class="rb b" style="height:52px"></div></div><div class="rbg"><div class="rb a" style="height:68px"></div><div class="rb b" style="height:62px"></div></div><div class="rbg"><div class="rb a" style="height:72px"></div><div class="rb b" style="height:70px"></div></div><div class="rbg"><div class="rb a" style="height:80px"></div><div class="rb b" style="height:74px"></div></div><div class="rbg" style="opacity:.88"><div class="rb f" style="height:85px"></div><div class="rb b" style="height:78px"></div></div><div class="rbg" style="opacity:.72"><div class="rb p" style="height:90px"></div><div class="rb b" style="height:82px"></div></div><div class="rbg" style="opacity:.58"><div class="rb p" style="height:88px"></div><div class="rb b" style="height:85px"></div></div><div class="rbg" style="opacity:.46"><div class="rb p" style="height:93px"></div><div class="rb b" style="height:88px"></div></div></div><div class="rl"><div class="rlg">Q1'25</div><div class="rlg">Q2'25</div><div class="rlg">Q3'25</div><div class="rlg">Q4'25</div><div class="rlg">Q1'26</div><div class="rlg">Q2'26F</div><div class="rlg">Q3'26F</div><div class="rlg">Q4'26F</div></div><div class="rleg"><div class="rli"><div class="rld" style="background:var(--cxg)"></div>Actual</div><div class="rli"><div class="rld" style="background:var(--cxg-tl)"></div>Budget</div><div class="rli"><div class="rld" style="background:var(--cxg-or)"></div>Forecast</div><div class="rli"><div class="rld" style="background:var(--cxg-sd);border:1px dashed var(--cxg-or)"></div>Projected</div></div></div>
+            <div class="bi-card"><div class="bi-ct">Pipeline by Stage ($M)</div><div class="pipe"><div class="pr"><span class="ps">Qualified</span><div class="pbw"><div class="pb" style="width:100%;background:var(--cxg)"><span class="pv">$12.1M · 38</span></div></div><span class="pc">38</span></div><div class="pr"><span class="ps">Proposal</span><div class="pbw"><div class="pb" style="width:64%;background:var(--cxg-sg)"><span class="pv">$7.8M · 19</span></div></div><span class="pc">19</span></div><div class="pr"><span class="ps">Negotiation</span><div class="pbw"><div class="pb" style="width:26%;background:var(--cxg-or)"><span class="pv">$3.2M</span></div></div><span class="pc">8</span></div><div class="pr"><span class="ps">Verbal Win</span><div class="pbw"><div class="pb" style="width:15%;background:var(--cxg-tl)"><span class="pv" style="color:var(--cxg)">$1.8M</span></div></div><span class="pc">4</span></div></div><div style="margin-top:.65rem;padding-top:.55rem;border-top:1px solid var(--rule)"><div style="font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:.38rem">Capacity vs Demand</div><div class="cap-rows"><div class="cr"><span class="crla">Europe</span><div class="crtr"><div class="crfi" style="width:82%;background:var(--cxg)"></div></div><span class="crpct">82%</span></div><div class="cr"><span class="crla">MENA</span><div class="crtr"><div class="crfi" style="width:95%;background:var(--cxg-rd)"></div></div><span class="crpct" style="color:var(--cxg-rd)">95%⚠</span></div><div class="cr"><span class="crla">APAC</span><div class="crtr"><div class="crfi" style="width:67%;background:var(--cxg-sg)"></div></div><span class="crpct">67%</span></div><div class="cr"><span class="crla">Americas</span><div class="crtr"><div class="crfi" style="width:54%;background:var(--cxg-tl)"></div></div><span class="crpct">54%</span></div></div></div></div>
+          </div>
+          <div class="bi-card"><div class="bi-ct">Regional Variance , Q1 2026 Actual vs Budget</div><table class="var-t"><thead><tr><th>Region</th><th>Budget</th><th>Actual</th><th>Variance</th><th>YoY</th><th>Missions</th><th>Avg Score</th></tr></thead><tbody><tr><td>Europe</td><td>$1,200K</td><td>$1,350K</td><td class="vp">+12.5%</td><td class="vp">+8%</td><td>8,420</td><td>8.2</td></tr><tr><td>MENA</td><td>$680K</td><td>$590K</td><td class="vn">–13.2%</td><td class="vp">+15%</td><td>4,100</td><td>7.5</td></tr><tr><td>APAC</td><td>$520K</td><td>$611K</td><td class="vp">+17.5%</td><td class="vp">+22%</td><td>3,890</td><td>7.9</td></tr><tr><td>Americas</td><td>$310K</td><td>$298K</td><td class="vn">–3.9%</td><td class="vp">+5%</td><td>1,840</td><td>7.7</td></tr><tr style="font-weight:500"><td>Total</td><td>$2,710K</td><td>$2,849K</td><td class="vp">+5.1%</td><td class="vp">+11%</td><td>18,250</td><td>7.9</td></tr></tbody></table></div>
+                <p class="cxg-note" style="margin-top:1.5rem">Data is proprietary. Figures are illustrative; the forecast architecture, operating logic, and dashboard structure are real.</p>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ECOCONNECT -->
+<section class="section" id="eco" style="background-color:rgb(248,247,245)">
+  <div class="si">
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">04 /</span> 2024–2025 · Founder, Strategy</div><h2 style="color:rgb(42,107,60)">EcoConnect - <em style="color:var(--eco-lt)">ethical fashion<br>sourcing platform</em></h2></div></div>
+    <!-- WIDE ECO CAROUSEL -->
+    <div class="carousel" style="margin-bottom:2.5rem">
+      <div class="c-bar" style="background:#1e2e22;border-bottom-color:rgba(255,255,255,.08)">
+        <div class="cdot"></div><div class="cdot"></div><div class="cdot"></div>
+        <div class="curl" id="e-url" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.42)">app.ecoconnect-app.com</div>
+      </div>
+      <div class="c-screens eco">
+        <!-- E1: Search with left nav -->
+        <div class="c-screen active" id="es-0" style="padding:0;display:flex;flex-direction:column">
+          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div class="enav"><span>Home</span><span>About</span><span>Contact</span><span class="elogin">Login</span></div></div>
+          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
+            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
+              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
+              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.2rem;display:flex;align-items:center;gap:.35rem"><span>🔍</span> Find Supplier</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📊</span> Dashboard</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📋</span> Opportunities</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📄</span> Contracts</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
+              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
+                <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.4rem">Active Filters</div>
+                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45rem;border-radius:20px;display:inline-block;margin:.1rem .05rem">Apparel ✕</div>
+                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45rem;border-radius:20px;display:inline-block;margin:.1rem .05rem">GOTS ✕</div>
+                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45px;border-radius:20px;display:inline-block;margin:.1rem .05rem">Vietnam ✕</div>
+              </div>
+            </div>
+            <div style="padding:.8rem 1rem;background:white;overflow:hidden">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem">
+                <div style="font-size:.65rem;color:#555;font-weight:500">Showing 1–6 of 4,186 results</div>
+                <div style="font-size:.56rem;color:#888">Sort: Relevance ▾</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.45rem">
+                <div class="ecard"><div class="ecn">PureWeave Fabrics, Inc</div><div class="ecl">Argentina · Leather · Processing</div><span class="ecert">GOTS</span><span class="ecert">LWG</span><span class="ecert">Fair Trade</span></div>
+                <div class="ecard"><div class="ecn">GreenThread Textiles Co.</div><div class="ecl">Netherlands · Fabrics</div><span class="ecert">GOTS</span><span class="ecert">OEKO-TEX</span></div>
+                <div class="ecard"><div class="ecn">Conscious Cotton Collective</div><div class="ecl">Vietnam · Fabrics & Textiles</div><span class="ecert">GOTS</span></div>
+                <div class="ecard"><div class="ecn">Calicos Cotton Private Ltd</div><div class="ecl">USA · Fabrics & Textiles</div><span class="ecert">OEKO-TEX 100</span></div>
+                <div class="ecard"><div class="ecn">Guilt-Free Hides</div><div class="ecl">Argentina · Leather</div><span class="ecert">LWG</span><span class="ecert">Cradle-to-Cradle</span></div>
+                <div class="ecard"><div class="ecn">Corn. van Dijk BV</div><div class="ecl">Netherlands · Fabrics</div><span class="ecert">GOTS</span><span class="ecert">OEKO-TEX</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- E2: Dashboard with left nav + reporting -->
+        <div class="c-screen" id="es-1" style="padding:0;display:flex;flex-direction:column">
+          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div style="font-size:.58rem;color:rgba(255,255,255,.4)">Dashboard</div></div>
+          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
+            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
+              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">🔍</span> Find Supplier</div>
+              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span>📊</span> Dashboard</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📋</span> Opportunities</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📄</span> Contracts</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
+              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
+                <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.4rem">Period</div>
+                <div style="font-size:.6rem;background:#2a6b3c;color:white;padding:.18rem .5rem;border-radius:3px;display:inline-block">All Time ▾</div>
+              </div>
+            </div>
+            <div style="background:#f8f8f8;padding:.75rem .85rem;overflow:hidden">
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;margin-bottom:.7rem">
+                <div class="edkpi"><div class="edkpi-n">$20K</div><div class="edkpi-d">↑ 70%</div><div class="edkpi-l">Income</div></div>
+                <div class="edkpi"><div class="edkpi-n">50K</div><div class="edkpi-d" style="color:#c14456">↓ 10%</div><div class="edkpi-l">Customers</div></div>
+                <div class="edkpi"><div class="edkpi-n">4,186</div><div class="edkpi-d" style="color:#2a6b3c">Active</div><div class="edkpi-l">Suppliers</div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:.5rem">
+                <div class="edcard"><div class="edtitle">Revenue by month ($K)</div>
+                  <div style="display:flex;align-items:flex-end;gap:.25rem;height:52px;margin-bottom:.2rem">
+                    <div style="flex:1;background:#c8e6c9;border-radius:2px 2px 0 0;height:35%"></div>
+                    <div style="flex:1;background:#a5d6a7;border-radius:2px 2px 0 0;height:48%"></div>
+                    <div style="flex:1;background:#81c784;border-radius:2px 2px 0 0;height:55%"></div>
+                    <div style="flex:1;background:#66bb6a;border-radius:2px 2px 0 0;height:62%"></div>
+                    <div style="flex:1;background:#4caf50;border-radius:2px 2px 0 0;height:70%"></div>
+                    <div style="flex:1;background:#43a047;border-radius:2px 2px 0 0;height:78%"></div>
+                    <div style="flex:1;background:#388e3c;border-radius:2px 2px 0 0;height:85%"></div>
+                    <div style="flex:1;background:#2e7d32;border-radius:2px 2px 0 0;height:100%"></div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;font-size:.48rem;color:#999"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
+                </div>
+                <div class="edcard"><div class="edtitle">Top Suppliers</div>
+                  <div class="erow"><span>Green Solutions</span><span style="color:#2a6b3c;font-weight:600">★ 4.9</span></div>
+                  <div class="erow"><span>Organic Linen LLC</span><span style="color:#2a6b3c;font-weight:600">★ 4.8</span></div>
+                  <div class="erow"><span>Cahaya Silk, FEZ</span><span style="color:#2a6b3c;font-weight:600">★ 4.7</span></div>
+                  <div class="erow"><span>Marine Global</span><span style="color:#2a6b3c;font-weight:600">★ 4.6</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- E3: Opportunities with left nav -->
+        <div class="c-screen" id="es-2" style="padding:0;display:flex;flex-direction:column">
+          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div style="font-size:.58rem;color:rgba(255,255,255,.4)">Opportunities</div></div>
+          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
+            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
+              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">🔍</span> Find Supplier</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📊</span> Dashboard</div>
+              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span>📋</span> Opportunities</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📄</span> Contracts</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
+              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
+                <div style="font-size:.52rem;color:#999;margin-bottom:.3rem">Status</div>
+                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45rem;border-radius:20px;display:inline-block">Open</div>
+              </div>
+            </div>
+            <div style="background:#f8f8f8;padding:.75rem .85rem;overflow:hidden">
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;margin-bottom:.6rem">
+                <div style="background:white;border:1px solid #eee;border-radius:4px;padding:.4rem .55rem;text-align:center"><div style="font-size:.85rem;font-weight:700;color:#0a0a0a">25</div><div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.08em">Applications</div></div>
+                <div style="background:white;border:1px solid #eee;border-radius:4px;padding:.4rem .55rem;text-align:center"><div style="font-size:.85rem;font-weight:700;color:#2a6b3c">10</div><div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.08em">Days to close</div></div>
+                <div style="background:white;border:1px solid #eee;border-radius:4px;padding:.4rem .55rem;text-align:center"><div style="font-size:.85rem;font-weight:700;color:#0a0a0a">150</div><div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.08em">Views</div></div>
+              </div>
+              <div style="background:white;border:1px solid #e8e8e8;border-radius:4px;overflow:hidden">
+                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.3rem .6rem;background:#f5f5f5;font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;color:#888;border-bottom:1px solid #eee">
+                  <span>Company</span><span>Applied</span><span>Price</span><span>Cert. body</span><span>Status</span>
+                </div>
+                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;border-bottom:1px solid #f0f0f0;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Guilt-Free Hides</span><span>Today, 2m ago</span><span style="color:#2a6b3c;font-weight:600">$500</span><span style="font-size:.52rem">Ecocert</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fef3cd;color:#856404;border-radius:3px">Pending</span></div>
+                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;border-bottom:1px solid #f0f0f0;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Corn. van Dijk BV</span><span>Today, 5m ago</span><span style="color:#2a6b3c;font-weight:600">$1,000</span><span style="font-size:.52rem">Intertek</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fef3cd;color:#856404;border-radius:3px">Pending</span></div>
+                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;border-bottom:1px solid #f0f0f0;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Calicos Cotton</span><span>Today, 1h ago</span><span style="color:#2a6b3c;font-weight:600">$500</span><span style="font-size:.52rem">Control Union</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fee2e2;color:#991b1b;border-radius:3px">Rejected</span></div>
+                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Conscious Cotton</span><span>Yesterday</span><span style="color:#2a6b3c;font-weight:600">$1,000</span><span style="font-size:.52rem">Control Union</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fef3cd;color:#856404;border-radius:3px">Pending</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- E4: Contracts with left nav -->
+        <div class="c-screen" id="es-3" style="padding:0;display:flex;flex-direction:column">
+          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div style="font-size:.58rem;color:rgba(255,255,255,.4)">Contracts & PO Management</div></div>
+          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
+            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
+              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">🔍</span> Find Supplier</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📊</span> Dashboard</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📋</span> Opportunities</div>
+              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span>📄</span> Contracts</div>
+              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
+              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
+                <div style="font-size:.52rem;color:#999;margin-bottom:.3rem">Contract value</div>
+                <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#2a6b3c">$250K</div>
+                <div style="font-size:.52rem;color:#888">Active contract</div>
+              </div>
+            </div>
+            <div class="econ" style="border-radius:0">
+              <div class="econh"><div class="econt">Calicos Cotton Private Limited</div><div class="econv">$250,000</div></div>
+              <div class="econc"><div class="econct"><div><div class="econcn">Active Contract · Ends Dec 2027</div><div style="font-size:.54rem;color:#888;margin-top:.08rem">15,500 units · 22 months remaining</div></div><span class="econcs">65% Delivered</span></div><div class="econcp"><div class="econcb" style="width:65%"></div></div><div class="econcm"><span>$8,250 paid of $250,000</span><span>Next PO: 29 Dec 2025</span></div></div>
+              <div style="margin-top:.5rem"><div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:.38rem">Recent Purchase Orders</div><div class="epos"><div class="epo"><div class="epo-id">PO-00123</div><div class="epo-v" style="color:#2a6b3c">$120 · Received</div></div><div class="epo"><div class="epo-id">PO-23009</div><div class="epo-v" style="color:#bb6125">-$50 · Pending</div></div><div class="epo"><div class="epo-id">PO-23012</div><div class="epo-v" style="color:#bb6125">-$50 · Pending</div></div><div class="epo"><div class="epo-id">PO-23015</div><div class="epo-v" style="color:#2a6b3c">$120 · Received</div></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-foot" style="background:#1e2e22;border-top-color:rgba(255,255,255,.08)">
+        <div class="pdots"><div class="pdot on" style="background:var(--eco-lt)" onclick="goE(0)"></div><div class="pdot" onclick="goE(1)"></div><div class="pdot" onclick="goE(2)"></div><div class="pdot" onclick="goE(3)"></div></div>
+        <div class="c-lbl" id="e-lbl" style="color:rgba(255,255,255,.4)">Platform <b style="color:var(--eco-lt)">Search</b></div>
+      </div>
+    </div>
+    <!-- ECO TEXT BELOW -->
+    <div class="eco-bottom">
+      <div class="eco-copy">
+  <p>Working inside luxury CX for a decade meant sitting close to a specific kind of risk: brands knew exactly how their sales associates performed at the point of sale, but had almost no visibility upstream. When Loro Piana’s Peruvian supply chain came to light, or when LVMH houses found themselves unable to account for labour practices three tiers deep, the pattern was consistent, not negligence, but a genuine absence of infrastructure. Certifications lived in PDFs, supplier claims were unverifiable, and the industry found out about problems the same way the public did.</p>
+  <p>EcoConnect was built to close that infrastructure gap: supplier discovery, certification verification, RFP management, and contract tracking in one stack. Over 4,000 verified suppliers at launch. The same trust problem I had been solving on the consumer side (are these people who they say they are?) applied just as clearly to the supply side.</p>
+  <p class="muted">Built with a three-person team across three continents. Paused in 2025 as US-China tariffs made the green premium untenable.</p>
+  <p>Timing was wrong. The build was not.</p>
+</div>
+<div class="eco-right">
+        <div class="eco-award">
+          <div class="eco-award-top">
+            <div class="eco-emblem">
+              <img class="eco-mit-logo" src="https://designx.mit.edu/wp-content/uploads/2022/02/WordpressSocialLinkSEO.png" alt="MITdesignX logo">
+            </div>
+            <div class="eco-award-copy">
+              <div class="eco-award-label">Recognition</div>
+              <div class="eco-award-name">MITdesignX Demo Day Winner</div>
+              <div class="eco-award-year">Dubai · 2025</div>
+            </div>
+          </div>
+          <p class="eco-award-desc">Beat ventures with $1M+ in government contracts. Bootstrapped , built during a full-time executive role and an ESSEC EMBA with Mannheim dual degree. No dedicated time. No external funding.</p>
+        </div>
+        <div class="eco-facts">
+          <div class="eco-fact">
+            <span class="eco-fact-n">4,186</span>
+            <span class="eco-fact-l">certified suppliers at launch</span>
+          </div>
+          <div class="eco-fact">
+            <span class="eco-fact-n">3</span>
+            <span class="eco-fact-l">person team across three continents</span>
+          </div>
+        </div>
+        <div class="eco-mi"><div class="eco-ml">Stack</div><div class="eco-mv">Node.js · React · PostgreSQL · AWS · Elasticsearch</div></div>
+        <div class="eco-mi"><div class="eco-ml">Status</div><div class="eco-mv">Paused 2025. Platform live. IP retained.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div><div class="fn">Alexandra <em>Kan</em></div><div style="font-size:.6rem;color:var(--slate);margin-top:.3rem;letter-spacing:.06em">Growth · Product · Consumer Marketplace · Luxury</div></div>
+    <div style="text-align:right">
+      <div class="fl" style="justify-content:flex-end"><a href="https://www.linkedin.com/in/kan-alexandra/" target="_blank">LinkedIn</a><a href="https://alexandra-kan.github.io/audacity/" target="_blank">Audacity</a><a href="https://ecoconnect-app.com" target="_blank">EcoConnect</a><a href="mailto:kan.alexandra@gmail.com">Contact</a></div>
+      <div class="fc">© 2026 Alexandra Kan. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Audacity
+const as=document.querySelectorAll('#as-0,#as-1,#as-2,#as-3');
+const ad=document.querySelectorAll('#aud .pdot');
+const auEl=document.getElementById('a-url'),alEl=document.getElementById('a-lbl');
+const aD=[{u:'Consumer Registration',l:'Consumer <b>Registration</b>'},{u:'Ops · Assign',l:'Ops <b>Assign</b>'},{u:'Ops · Review',l:'Ops <b>Review</b>'},{u:'Brand Portal',l:'Brand <b>Portal</b>'}];
+let ac=0,at;
+function goA(n){as[ac].classList.remove('active');as[ac].classList.add('leaving');const o=ac;setTimeout(()=>as[o].classList.remove('leaving'),520);ad[ac].classList.remove('on');ac=n;as[ac].classList.add('active');ad[ac].classList.add('on');auEl.textContent=aD[ac].u;alEl.innerHTML=aD[ac].l;clearInterval(at);at=setInterval(()=>goA((ac+1)%4),4800);}
+at=setInterval(()=>goA((ac+1)%4),4800);
+
+// EcoConnect
+const es=document.querySelectorAll('#es-0,#es-1,#es-2,#es-3');
+const ed=document.querySelectorAll('#eco .pdot');
+const euEl=document.getElementById('e-url'),elEl=document.getElementById('e-lbl');
+const eD=[{u:'app.ecoconnect-app.com , Search',l:'Platform <b style="color:var(--eco-lt)">Search</b>'},{u:'app.ecoconnect-app.com , Dashboard',l:'Buyer <b style="color:var(--eco-lt)">Dashboard</b>'},{u:'app.ecoconnect-app.com , Suppliers',l:'Supplier <b style="color:var(--eco-lt)">Discovery</b>'},{u:'app.ecoconnect-app.com , Contracts',l:'Contract <b style="color:var(--eco-lt)">Management</b>'}];
+let ec=0,et;
+function goE(n){es[ec].classList.remove('active');es[ec].classList.add('leaving');const o=ec;setTimeout(()=>es[o].classList.remove('leaving'),520);ed[ec].classList.remove('on');ec=n;es[ec].classList.add('active');ed[ec].classList.add('on');if(euEl)euEl.textContent=eD[ec].u;if(elEl)elEl.innerHTML=eD[ec].l;clearInterval(et);et=setInterval(()=>goE((ec+1)%4),5200);}
+et=setInterval(()=>goE((ec+1)%4),5200);
+
+// Growth Engine carousel
+const gs=document.querySelectorAll('#gs-0,#gs-1');
+const gd=document.querySelectorAll('#ge .pdot');
+const guEl=document.getElementById('g-url'),glEl=document.getElementById('g-lbl');
+const gD=[
+  {u:'G&E Intelligence · Database Health',l:'Database <b style="color:var(--burgundy)">Health</b>'},
+  {u:'G&E Intelligence · Channel Effectiveness',l:'Channel <b style="color:var(--burgundy)">Effectiveness</b>'},
+];
+let gc=0,gt;
+function goG(n){gs[gc].classList.remove('active');gs[gc].classList.add('leaving');const o=gc;setTimeout(()=>gs[o].classList.remove('leaving'),520);gd[gc].classList.remove('on');gc=n;gs[gc].classList.add('active');gd[gc].classList.add('on');if(guEl)guEl.textContent=gD[gc].u;if(glEl)glEl.innerHTML=gD[gc].l;clearInterval(gt);gt=setInterval(()=>goG((gc+1)%2),5800);}
+gt=setInterval(()=>goG((gc+1)%2),5800);
+</script>
+
+<script>
+document.querySelector('.hero').dataset.variant='2';
+</script>
+</body>
+</html>
